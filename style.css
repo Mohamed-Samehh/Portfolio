@@ -95,25 +95,39 @@ body {
     font-size: 1rem;
   }
   
-  /* Projects Section */
+ /* Projects Section */
   #projects {
     padding: 60px 0;
   }
-  
+
+  #projects .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 40px; /* Adds space between rows */
+  }
+
   .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
     border-radius: 10px;
     text-align: center;
-    padding: 20px 0;
+    padding: 20px;
+    margin-bottom: 20px; /* Adds space between individual cards */
+    height: 100%; /* Ensures cards fill up the available height */
+    flex: 1 1 30%; /* This allows the cards to be responsive and take up equal space */
   }
-  
-  .card:hover {
-    transform: scale(1.05);
-  }
-  
+
   .card i {
     margin-bottom: 15px;
+  }
+
+  .card:hover {
+    transform: scale(1.05);
   }
   
   /* Education Section */
