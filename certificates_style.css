@@ -9,7 +9,7 @@ body {
 
   /* Back Button Styles */
   .back-button {
-    position: absolute; /* try fixed for sticky button */
+    position: fixed;
     top: 15px;
     right: 15px;
   }
@@ -18,6 +18,21 @@ body {
     border-color: #ccc;
     color: #333;
     border-radius: 50px;
+  }
+
+  .back-button .btn i {
+    transition: margin-left 0.2s ease;
+  }
+
+  .back-button .btn span {
+    transition: opacity 0.1s ease, margin-left 0.3s ease;
+    opacity: 1;
+  }
+
+  .hide-text span {
+    opacity: 0;
+    margin-left: -30px;
+    transition: opacity 0.1s ease, margin-left 0.3s ease;
   }
 
   /* Certificates Section Styles */
@@ -33,6 +48,11 @@ body {
     height: 100%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
+    transition: transform 0.3s ease;
+  }
+
+  .card:hover {
+    transform: scale(1.05);
   }
 
   .card-img-top {
