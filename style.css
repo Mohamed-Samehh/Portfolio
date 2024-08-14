@@ -104,7 +104,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    margin-bottom: 40px; /* Adds space between rows */
+    margin-bottom: 40px;
   }
 
   .card {
@@ -117,9 +117,9 @@ body {
     border-radius: 10px;
     text-align: center;
     padding: 20px;
-    margin-bottom: 20px; /* Adds space between individual cards */
-    height: 100%; /* Ensures cards fill up the available height */
-    flex: 1 1 30%; /* This allows the cards to be responsive and take up equal space */
+    margin-bottom: 20px;
+    height: 100%;
+    flex: 1 1 30%;
   }
 
   .card i {
