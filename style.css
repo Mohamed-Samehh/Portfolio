@@ -1,0 +1,208 @@
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    background-color: #f8f9fa;
+  }
+  
+  h2 {
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .container {
+    max-width: 1100px;
+  }
+  
+  /* Navbar */
+  .navbar-dark .navbar-brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+  
+  .navbar-dark .nav-link {
+    font-size: 1rem;
+  }
+  
+  /* Home Section */
+  .home-section {
+    height: 100vh;
+    background-color: #343a40;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .home-section i {
+    animation: fadeIn 2s ease-in-out;
+  }
+  
+  .home-section h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    animation: fadeIn 2s ease-in-out;
+  }
+  
+  .home-section p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    animation: fadeIn 2s ease-in-out;
+  }
+  
+  .btn-primary {
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 30px;
+  }
+  
+  /* About Section */
+  #about {
+    background-color: #ffffff;
+    padding: 60px 0;
+  }
+  
+  #about p {
+    font-size: 1.15rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  /* Skills Section */
+  #skills {
+    padding: 60px 0;
+  }
+  
+  #skills i {
+    color: #007bff;
+    margin-bottom: 20px;
+  }
+  
+  #skills h4 {
+    font-size: 1.25rem;
+    margin-top: 15px;
+  }
+  
+  #skills p {
+    font-size: 1rem;
+  }
+  
+  /* Projects Section */
+  #projects {
+    padding: 60px 0;
+  }
+  
+  .card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    border-radius: 10px;
+    text-align: center;
+    padding: 20px 0;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+  }
+  
+  .card i {
+    margin-bottom: 15px;
+  }
+  
+  /* Education Section */
+  #education {
+    background-color: #f8f9fa;
+    padding: 60px 0;
+  }
+  
+  #education i {
+    margin-bottom: 15px;
+  }
+  
+  #education p {
+    font-size: 1.15rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  /* Experience Section */
+  #experience {
+    padding: 60px 0;
+  }
+  
+  #experience i {
+    margin-bottom: 15px;
+  }
+  
+  #experience h4 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+  
+  #experience p {
+    font-size: 1rem;
+  }
+  
+  /* Contact Section */
+  #contact {
+    background-color: #343a40;
+    color: white;
+    padding: 60px 0;
+  }
+  
+  #contact p {
+    font-size: 1.15rem;
+    margin-bottom: 20px;
+  }
+  
+  #contact a {
+    color: white;
+  }
+  
+  #contact a:hover {
+    color: #007bff;
+  }
+  
+  #contact .btn-outline-light {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 30px;
+    margin-top: 10px;
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .home-section h1 {
+      font-size: 2.5rem;
+    }
+  
+    .home-section p {
+      font-size: 1.1rem;
+    }
+  
+    #skills .col-md-3,
+    #experience .col-md-6 {
+      margin-bottom: 30px;
+    }
+  
+    #projects .col-lg-4 {
+      margin-bottom: 30px;
+    }
+  }
