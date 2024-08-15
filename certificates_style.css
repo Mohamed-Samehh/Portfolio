@@ -7,9 +7,9 @@
     padding: 0;
   }
 
-  .container {
-    max-width: 1200px; /* size of page */
-  }
+  /* .container {
+    max-width: 1200px;
+  } */
 
   /* Back Button Styles */
   .back-button {
