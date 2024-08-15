@@ -16,9 +16,9 @@
 
 <body>
   <body>
-    <!-- Back Button -->
+    <!-- Portfolio Button -->
     <div class="back-button">
-      <a href="index.html" class="btn btn-outline-secondary">
+      <a href="index.html" class="btn btn-outline-primary">
         <i class="fa-solid fa-user"></i><span>&nbsp; Portfolio</span>
       </a>
     </div>
@@ -315,16 +315,13 @@
   <script>
     // Portfolio button scroll animation
     const backButton = document.querySelector('.back-button .btn');
-    const backButtonText = backButton.querySelector('span');
-    let originalOrder = [];
 
     window.addEventListener('scroll', () => {
+      // Check if the user is at the top of the page
       if (window.scrollY === 0) {
-        backButtonText.style.opacity = '1';
-        backButtonText.style.marginLeft = '0';
+        backButton.innerHTML = '<i class="fa-solid fa-user"></i>&nbsp; Portfolio';
       } else {
-        backButtonText.style.opacity = '0';
-        backButtonText.style.marginLeft = '-73.5px';
+        backButton.innerHTML = '<i class="fa-solid fa-user"></i>';
       }
     });
 

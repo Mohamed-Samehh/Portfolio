@@ -8,43 +8,19 @@
   }
 
   .container {
-    max-width: 1200px;
+    max-width: 1200px; /* size of page */
   }
 
   /* Back Button Styles */
   .back-button {
-    position: fixed;
+    position: fixed; /* try absolute for a non-sticky button */
     top: 15px;
     right: 15px;
+    z-index: 1000;
   }
 
-  .btn-outline-secondary {
-    border-color: #007bff;
-    color: #007bff;
-    border-radius: 25px;
-    font-weight: 600;
-    background: transparent;
-    transition: all 0.3s ease;
-  }
-
-  .btn-outline-secondary:hover {
-    background-color: #007bff;
-    color: #fff;
-  }
-
-  .back-button .btn i {
-    transition: margin-left 0.2s ease;
-  }
-
-  .back-button .btn span {
-    transition: opacity 0.1s ease, margin-left 0.3s ease;
-    opacity: 1;
-  }
-
-  .hide-text span {
-    opacity: 0;
-    margin-left: -30px;
-    transition: opacity 0.1s ease, margin-left 0.3s ease;
+  .btn-outline-primary {
+    border-radius: 10px;
   }
 
   /* Sorting Button Styles */
