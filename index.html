@@ -268,24 +268,32 @@
     window.addEventListener('scroll', function() {
         const sections = document.querySelectorAll('section');
         const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
-        const contactLink = navLinks[navLinks.length - 1];
-  
+        const lastLink = navLinks[navLinks.length - 1];
+        const firstLink = sections[0];
+
         let scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
-        let windowHeight = window.innerHeight;
-        let documentHeight = document.documentElement.scrollHeight;
-  
-        sections.forEach((section, index) => {
-            if (section.offsetTop <= scrollPosition && (section.offsetTop + section.offsetHeight) > scrollPosition) {
-                navLinks.forEach(link => link.classList.remove('active'));
-                navLinks[index].classList.add('active');
-            }
-        });
-  
-        if (Math.ceil(scrollPosition + windowHeight) >= documentHeight) {
+        const offset = 75; // Change this value to adjust when the section highlights
+        const windowHeight = window.innerHeight;
+        const documentHeight = document.documentElement.scrollHeight;
+
+        let atBottom = Math.ceil(scrollPosition + windowHeight) >= documentHeight;
+
+        if (atBottom) {
             navLinks.forEach(link => link.classList.remove('active'));
-            contactLink.classList.add('active');
+            lastLink.classList.add('active');
+        } else {
+            if (scrollPosition < firstLink.offsetTop) {
+                navLinks.forEach(link => link.classList.remove('active'));
+            }
+
+            sections.forEach((section, index) => {
+                if (section.offsetTop - offset <= scrollPosition && (section.offsetTop + section.offsetHeight) > scrollPosition) {
+                    navLinks.forEach(link => link.classList.remove('active'));
+                    navLinks[index].classList.add('active');
+                }
+            });
         }
     });
-  </script>    
+  </script>
 </body>
 </html>
