@@ -15,106 +15,113 @@
 </head>
 
 <body>
-  <!-- Back Button -->
-  <div class="back-button">
-    <a href="index.html" class="btn btn-outline-secondary">
-      <i class="fa-solid fa-user"></i><span>&nbsp; Portfolio</span>
-    </a>
-  </div>  
-
-  <!-- Certificates Section -->
-  <section id="certificates" class="py-5">
-    <div class="container">
-      <h2 class="text-center mb-5">My Certificates</h2>
-      <div class="row">
-        
-        <!-- Certificate 1 -->
-        <div class="col-md-6 col-lg-4 mb-4">
-          <div class="card border-0 shadow-sm">
-            <a href="" data-bs-toggle="modal" data-bs-target="#pdfModal1" class="embed-responsive">
-              <img src="./assets/Certificates/Udemy/ASPNET & Angular.jpg" alt="ASPNET & Angular" class="card-img-top">
-            </a>
-            <div class="card-body text-center">
-              <h5 class="card-title">ASPNET & Angular</h5>
-              <p class="card-text">Udemy</p>
-              <a href="https://www.udemy.com/certificate/UC-0c75f5f3-8b5b-4035-886f-20bb64537621/" class="btn btn-primary">Verify Certificate</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Certificate 2 -->
-        <div class="col-md-6 col-lg-4 mb-4">
-          <div class="card border-0 shadow-sm">
-            <a href="" data-bs-toggle="modal" data-bs-target="#pdfModal2" class="embed-responsive">
-              <img src="./assets/Certificates/AITB/Node.js.jpg" alt="Node.js Back-end Development" class="card-img-top">
-            </a>
-            <div class="card-body text-center">
-              <h5 class="card-title">Node.js Back-end Development</h5>
-              <p class="card-text">AITB</p>
-              <a href="https://aitbeg.com/verify-certification?cn=SE-WD-N-230722073928" class="btn btn-primary">Verify Certificate</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Certificate 3 -->
-        <div class="col-md-6 col-lg-4 mb-4">
-          <div class="card border-0 shadow-sm">
-            <a href="" data-bs-toggle="modal" data-bs-target="#pdfModal3" class="embed-responsive">
-              <img src="./assets/Certificates/MaharaTech/TypeScript Fundamentals.jpg" alt="TypeScript Fundamentals" class="card-img-top">
-            </a>
-            <div class="card-body text-center">
-              <h5 class="card-title">TypeScript Fundamentals</h5>
-              <p class="card-text">MaharaTech</p>
-              <a href="https://maharatech.gov.eg/mod/customcert/verify_certificate.php?contextid=253403&code=YDMM5r2e5a&qrcode=1" class="btn btn-primary">Verify Certificate</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Certificate 4 -->
-        <div class="col-md-6 col-lg-4 mb-4">
-          <div class="card border-0 shadow-sm">
-            <a href="" data-bs-toggle="modal" data-bs-target="#pdfModal4" class="embed-responsive">
-              <img src="./assets/Certificates/MaharaTech/Introduction to mongoDB.jpg" alt="Introduction to MongoDB" class="card-img-top">
-            </a>
-            <div class="card-body text-center">
-              <h5 class="card-title">Introduction to MongoDB</h5>
-              <p class="card-text">MaharaTech</p>
-              <a href="https://maharatech.gov.eg/mod/customcert/verify_certificate.php?contextid=253409&code=lYn8ZDMGbU&qrcode=1" class="btn btn-primary">Verify Certificate</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Certificate 5 -->
-        <div class="col-md-6 col-lg-4 mb-4">
-          <div class="card border-0 shadow-sm">
-            <a href="" data-bs-toggle="modal" data-bs-target="#pdfModal5" class="embed-responsive">
-              <img src="./assets/Certificates/LinkedIn Learning/Introduction to Web Design and Development.jpg" alt="Introduction to Web Design and Development" class="card-img-top">
-            </a>
-            <div class="card-body text-center">
-              <h5 class="card-title">Introduction to Web Design and Development</h5>
-              <p class="card-text">LinkedIn Learning</p>
-              <a href="https://www.linkedin.com/learning/certificates/91bdaa765c6127485278e3a446dd4ee57a1a3805de986c83df865947b2a2af71?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3Bvd3PaQd0Tqaq5zznRKpbFQ%3D%3D" class="btn btn-primary">Verify Certificate</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Certificate 6 -->
-        <div class="col-md-6 col-lg-4 mb-4">
-          <div class="card border-0 shadow-sm">
-            <a href="" data-bs-toggle="modal" data-bs-target="#pdfModal6" class="embed-responsive">
-              <img src="./assets/Certificates/LinkedIn Learning/Python Essential Training.jpg" alt="Python Essential Training" class="card-img-top">
-            </a>
-            <div class="card-body text-center">
-              <h5 class="card-title">Python Essential Training</h5>
-              <p class="card-text">LinkedIn Learning</p>
-              <a href="https://www.linkedin.com/learning/certificates/84e508f40e7a7fec4adf30612baf4e0d2d443f74c1600d2ed7927f414abb946b?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3BkV2KaGZNS2azGt2GNuVR7A%3D%3D" class="btn btn-primary">Verify Certificate</a>
-            </div>
-          </div>
-        </div>
-
-      </div>
+  <body>
+    <!-- Back Button -->
+    <div class="back-button">
+      <a href="index.html" class="btn btn-outline-secondary">
+        <i class="fa-solid fa-user"></i><span>&nbsp; Portfolio</span>
+      </a>
     </div>
-  </section>
+  
+    <!-- Sorting Button -->
+    <div class="sorting-buttons text-start ms-3">
+      <button class="btn btn-primary sort-btn" data-type="date" onclick="toggleSort(this)">Sort by Date</button>
+      <button class="btn btn-primary sort-btn" data-type="alphabetical" onclick="toggleSort(this)">Sort by Alphabet</button>
+    </div>
+  
+    <!-- Certificates Section -->
+    <section id="certificates" class="py-5">
+      <div class="container">
+        <h2 class="text-center mb-5">My Certificates</h2>
+        <div class="row" id="certificates-container">
+          
+          <!-- Certificate 1 -->
+          <div class="col-md-6 col-lg-4 mb-4 certificate-card" data-date="7-2024" data-title="ASPNET & Angular">
+            <div class="card border-0 shadow-sm">
+              <a href="" data-bs-toggle="modal" data-bs-target="#pdfModal1" class="embed-responsive">
+                <img src="./assets/Certificates/Udemy/ASPNET & Angular.jpg" alt="ASPNET & Angular" class="card-img-top">
+              </a>
+              <div class="card-body text-center">
+                <h5 class="card-title">ASPNET & Angular</h5>
+                <p class="card-text">Udemy<br>July 2024</p>
+                <a href="https://www.udemy.com/certificate/UC-0c75f5f3-8b5b-4035-886f-20bb64537621/" class="btn btn-primary">Verify Certificate</a>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Certificate 2 -->
+          <div class="col-md-6 col-lg-4 mb-4 certificate-card" data-date="9-2023" data-title="Node.js Back-end Development">
+            <div class="card border-0 shadow-sm">
+              <a href="" data-bs-toggle="modal" data-bs-target="#pdfModal2" class="embed-responsive">
+                <img src="./assets/Certificates/AITB/Node.js.jpg" alt="Node.js Back-end Development" class="card-img-top">
+              </a>
+              <div class="card-body text-center">
+                <h5 class="card-title">Node.js Back-end Development</h5>
+                <p class="card-text">AITB<br>September 2023</p>
+                <a href="https://aitbeg.com/verify-certification?cn=SE-WD-N-230722073928" class="btn btn-primary">Verify Certificate</a>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Certificate 3 -->
+          <div class="col-md-6 col-lg-4 mb-4 certificate-card" data-date="7-2024" data-title="TypeScript Fundamentals">
+            <div class="card border-0 shadow-sm">
+              <a href="" data-bs-toggle="modal" data-bs-target="#pdfModal3" class="embed-responsive">
+                <img src="./assets/Certificates/MaharaTech/TypeScript Fundamentals.jpg" alt="TypeScript Fundamentals" class="card-img-top">
+              </a>
+              <div class="card-body text-center">
+                <h5 class="card-title">TypeScript Fundamentals</h5>
+                <p class="card-text">MaharaTech<br>July 2024</p>
+                <a href="https://maharatech.gov.eg/mod/customcert/verify_certificate.php?contextid=253403&code=YDMM5r2e5a&qrcode=1" class="btn btn-primary">Verify Certificate</a>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Certificate 4 -->
+          <div class="col-md-6 col-lg-4 mb-4 certificate-card" data-date="7-2024" data-title="Introduction to MongoDB">
+            <div class="card border-0 shadow-sm">
+              <a href="" data-bs-toggle="modal" data-bs-target="#pdfModal4" class="embed-responsive">
+                <img src="./assets/Certificates/MaharaTech/Introduction to mongoDB.jpg" alt="Introduction to MongoDB" class="card-img-top">
+              </a>
+              <div class="card-body text-center">
+                <h5 class="card-title">Introduction to MongoDB</h5>
+                <p class="card-text">MaharaTech<br>July 2024</p>
+                <a href="https://maharatech.gov.eg/mod/customcert/verify_certificate.php?contextid=253409&code=lYn8ZDMGbU&qrcode=1" class="btn btn-primary">Verify Certificate</a>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Certificate 5 -->
+          <div class="col-md-6 col-lg-4 mb-4 certificate-card" data-date="6-2023" data-title="Introduction to Web Design and Development">
+            <div class="card border-0 shadow-sm">
+              <a href="" data-bs-toggle="modal" data-bs-target="#pdfModal5" class="embed-responsive">
+                <img src="./assets/Certificates/LinkedIn Learning/Introduction to Web Design and Development.jpg" alt="Introduction to Web Design and Development" class="card-img-top">
+              </a>
+              <div class="card-body text-center">
+                <h5 class="card-title">Introduction to Web Design and Development</h5>
+                <p class="card-text">LinkedIn Learning<br>June 2023</p>
+                <a href="https://www.linkedin.com/learning/certificates/91bdaa765c6127485278e3a446dd4ee57a1a3805de986c83df865947b2a2af71?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3Bvd3PaQd0Tqaq5zznRKpbFQ%3D%3D" class="btn btn-primary">Verify Certificate</a>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Certificate 6 -->
+          <div class="col-md-6 col-lg-4 mb-4 certificate-card" data-date="6-2023" data-title="Python Essential Training">
+            <div class="card border-0 shadow-sm">
+              <a href="" data-bs-toggle="modal" data-bs-target="#pdfModal6" class="embed-responsive">
+                <img src="./assets/Certificates/LinkedIn Learning/Python Essential Training.jpg" alt="Python Essential Training" class="card-img-top">
+              </a>
+              <div class="card-body text-center">
+                <h5 class="card-title">Python Essential Training</h5>
+                <p class="card-text">LinkedIn Learning<br>June 2023</p>
+                <a href="https://www.linkedin.com/learning/certificates/84e508f40e7a7fec4adf30612baf4e0d2d443f74c1600d2ed7927f414abb946b?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3BkV2KaGZNS2azGt2GNuVR7A%3D%3D" class="btn btn-primary">Verify Certificate</a>
+              </div>
+            </div>
+          </div>
+  
+        </div>
+      </div>
+    </section>
 
   <!-- PDF Modals -->
   <div class="modal fade" id="pdfModal1" tabindex="-1" aria-labelledby="pdfModalLabel1" aria-hidden="true">
@@ -204,19 +211,66 @@
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
   <script>
+    // Portfolio button scroll animation
     const backButton = document.querySelector('.back-button .btn');
     const backButtonText = backButton.querySelector('span');
-  
+    let originalOrder = [];
+
     window.addEventListener('scroll', () => {
       if (window.scrollY === 0) {
         backButtonText.style.opacity = '1';
         backButtonText.style.marginLeft = '0';
       } else {
         backButtonText.style.opacity = '0';
-        backButtonText.style.marginLeft = '-67px';
+        backButtonText.style.marginLeft = '-73.5px';
       }
     });
+
+    // Sorting functionality
+    window.addEventListener('DOMContentLoaded', () => {
+      const container = document.getElementById('certificates-container');
+      originalOrder = Array.from(container.getElementsByClassName('certificate-card'));
+    });
+
+    let isSortingEnabled = true;
+
+    function toggleSort(button) {
+      const container = document.getElementById('certificates-container');
+      const certificates = Array.from(container.getElementsByClassName('certificate-card'));
+      const otherButton = document.querySelector(`button[data-type="${button.getAttribute('data-type') === 'date' ? 'alphabetical' : 'date'}"]`);
+
+      if (isSortingEnabled) {
+        certificates.sort((a, b) => {
+          const type = button.getAttribute('data-type');
+          if (type === 'date') {
+            const dateA = new Date(a.getAttribute('data-date').split('-').reverse().join('-'));
+            const dateB = new Date(b.getAttribute('data-date').split('-').reverse().join('-'));
+            return dateB - dateA;
+          } else if (type === 'alphabetical') {
+            const titleA = a.getAttribute('data-title').toLowerCase();
+            const titleB = b.getAttribute('data-title').toLowerCase();
+            return titleA.localeCompare(titleB);
+          }
+        });
+
+        certificates.forEach(cert => container.appendChild(cert));
+        button.classList.add('active');
+        otherButton.disabled = true;
+      } else {
+        // Reset sorting
+        resetSorting();
+        otherButton.disabled = false;
+        button.classList.remove('active');
+      }
+
+      // Toggle sorting state
+      isSortingEnabled = !isSortingEnabled;
+    }
+
+    function resetSorting() {
+      const container = document.getElementById('certificates-container');
+      originalOrder.forEach(cert => container.appendChild(cert));
+    }
   </script>
-   
 </body>
 </html>

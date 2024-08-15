@@ -1,6 +1,10 @@
-/* General styles */
-body {
-    font-family: Arial, sans-serif;
+  /* General styles */
+  body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to right, #f8f9fa, #e9ecef);
+    color: #333;
+    margin: 0;
+    padding: 0;
   }
 
   .container {
@@ -15,9 +19,17 @@ body {
   }
 
   .btn-outline-secondary {
-    border-color: #ccc;
-    color: #333;
-    border-radius: 50px;
+    border-color: #007bff;
+    color: #007bff;
+    border-radius: 25px;
+    font-weight: 600;
+    background: transparent;
+    transition: all 0.3s ease;
+  }
+
+  .btn-outline-secondary:hover {
+    background-color: #007bff;
+    color: #fff;
   }
 
   .back-button .btn i {
@@ -35,64 +47,107 @@ body {
     transition: opacity 0.1s ease, margin-left 0.3s ease;
   }
 
-  /* Certificates Section Styles */
-  #certificates {
-    background-color: #f8f9fa;
+  /* Sorting Button Styles */
+  .sorting-buttons .btn {
+    border-radius: 25px;
+    padding: 0.5rem 1.5rem;
+    font-size: 0.9rem;
+    margin-right: 10px;
+    background-color: #007bff;
+    border: none;
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
   }
 
+  .sorting-buttons .btn.active,
+  .sorting-buttons .btn:hover {
+    background-color: #0056b3;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Certificates Section Styles */
   .card {
-    border-radius: 10px;
+    border-radius: 15px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     height: 100%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
   }
 
   .card:hover {
-    transform: scale(1.05);
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
   }
 
   .card-img-top {
     width: 100%;
-    height: 250px;
+    height: 200px;
     object-fit: cover;
-    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+  }
+
+  .card:hover .card-img-top {
+    transform: scale(1.05);
   }
 
   .card-body {
     background-color: #fff;
-    padding: 1rem;
+    padding: 1.5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-align: center;
   }
 
   .card-title {
-    font-size: 1.25rem;
-    font-weight: bold;
+    font-size: 1.5rem;
+    font-weight: 600;
     margin-top: 0.5rem;
   }
 
+  .card-text {
+    font-size: 1rem;
+    color: #6c757d;
+  }
+
   .btn-primary {
-    border-radius: 50px;
+    border-radius: 25px;
     padding: 0.5rem 1.5rem;
     font-size: 0.875rem;
     margin-top: 0.5rem;
+    background-color: #007bff;
+    border: none;
+    color: #fff;
+    transition: background-color 0.3s ease;
+  }
+
+  .btn-primary:hover {
+    background-color: #0056b3;
   }
 
   .modal-body iframe {
     width: 100%;
     height: 500px;
     border: none;
+    border-radius: 10px;
   }
 
   /* Responsive Styles */
   @media (max-width: 767px) {
     .card-body {
       padding: 1rem;
+    }
+
+    .card-img-top {
+      height: 150px;
+    }
+
+    .sorting-buttons .btn {
+      font-size: 0.8rem;
     }
   }
