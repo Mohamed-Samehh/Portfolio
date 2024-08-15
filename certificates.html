@@ -22,11 +22,18 @@
         <i class="fa-solid fa-user"></i><span>&nbsp; Portfolio</span>
       </a>
     </div>
-  
-    <!-- Sorting Button -->
+
+    <!-- Sorting Dropdown Button -->
     <div class="sorting-buttons text-start ms-3">
-      <button class="btn btn-primary sort-btn" data-type="date" onclick="toggleSort(this)">Sort by Date</button>
-      <button class="btn btn-primary sort-btn" data-type="alphabetical" onclick="toggleSort(this)">Sort by Alphabet</button>
+      <div class="btn-group">
+        <button type="button" class="btn btn-primary dropdown-toggle mt-3" data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="fas fa-sort"></i>
+        </button>
+        <ul class="dropdown-menu">
+          <li><button class="dropdown-item" data-type="date" onclick="toggleSort(this)">Sort by Date</button></li>
+          <li><button class="dropdown-item" data-type="alphabetical" onclick="toggleSort(this)">Sort by Alphabet</button></li>
+        </ul>
+      </div>
     </div>
   
     <!-- Certificates Section -->
