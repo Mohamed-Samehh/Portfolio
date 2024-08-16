@@ -38,11 +38,32 @@
     <!-- Certificates Section -->
     <section id="certificates" class="py-5">
       <div class="container">
-        <h2 class="text-center mb-5">My Certificates</h2>
+        <h2 class="text-center mb-4">My Certificates</h2>
+
+        <!-- Search Bar -->
+        <div class="search-container mb-5">
+          <div class="input-group">
+              <select class="custom-select search-category">
+                  <option value="title">Certificate Name</option>
+                  <option value="institute">Institute Name</option>
+              </select>
+              <input type="text" class="form-control search-input" placeholder="Search...">
+              <div class="input-group-append">
+                  <span class="search-icon">
+                      <i class="fas fa-search"></i>
+                  </span>
+              </div>
+          </div>
+        </div>
+
+        <!-- No Results Message -->
+        <div id="no-results" class="no-results-message" style="display: none;">
+          No results found for "<span id="search-query"></span>"
+        </div>
+
         <div class="row" id="certificates-container">
-          
           <!-- Certificate 1 -->
-          <div class="col-md-6 col-lg-4 mb-4 certificate-card" data-date="7-2024" data-title="ASPNET & Angular">
+          <div class="col-md-6 col-lg-4 mb-4 certificate-card" data-date="7-2024" data-title="ASPNET & Angular" data-institute="Udemy">
             <div class="card border-0 shadow-sm">
               <a href="" data-bs-toggle="modal" data-bs-target="#pdfModal1" class="embed-responsive">
                 <img src="./assets/Certificates/Udemy/ASPNET & Angular.jpg" alt="ASPNET & Angular" class="card-img-top">
@@ -56,7 +77,7 @@
           </div>
   
           <!-- Certificate 2 -->
-          <div class="col-md-6 col-lg-4 mb-4 certificate-card" data-date="9-2023" data-title="Node.js Back-end Development">
+          <div class="col-md-6 col-lg-4 mb-4 certificate-card" data-date="9-2023" data-title="Node.js Back-end Development" data-institute="AITB">
             <div class="card border-0 shadow-sm">
               <a href="" data-bs-toggle="modal" data-bs-target="#pdfModal2" class="embed-responsive">
                 <img src="./assets/Certificates/AITB/Node.js.jpg" alt="Node.js Back-end Development" class="card-img-top">
@@ -70,7 +91,7 @@
           </div>
   
           <!-- Certificate 3 -->
-          <div class="col-md-6 col-lg-4 mb-4 certificate-card" data-date="7-2024" data-title="TypeScript Fundamentals">
+          <div class="col-md-6 col-lg-4 mb-4 certificate-card" data-date="7-2024" data-title="TypeScript Fundamentals" data-institute="MaharaTech">
             <div class="card border-0 shadow-sm">
               <a href="" data-bs-toggle="modal" data-bs-target="#pdfModal3" class="embed-responsive">
                 <img src="./assets/Certificates/MaharaTech/TypeScript Fundamentals.jpg" alt="TypeScript Fundamentals" class="card-img-top">
@@ -84,7 +105,7 @@
           </div>
   
           <!-- Certificate 4 -->
-          <div class="col-md-6 col-lg-4 mb-4 certificate-card" data-date="7-2024" data-title="Introduction to MongoDB">
+          <div class="col-md-6 col-lg-4 mb-4 certificate-card" data-date="7-2024" data-title="Introduction to MongoDB" data-institute="MaharaTech">
             <div class="card border-0 shadow-sm">
               <a href="" data-bs-toggle="modal" data-bs-target="#pdfModal4" class="embed-responsive">
                 <img src="./assets/Certificates/MaharaTech/Introduction to mongoDB.jpg" alt="Introduction to MongoDB" class="card-img-top">
@@ -98,7 +119,7 @@
           </div>
   
           <!-- Certificate 5 -->
-          <div class="col-md-6 col-lg-4 mb-4 certificate-card" data-date="6-2023" data-title="Introduction to Web Design and Development">
+          <div class="col-md-6 col-lg-4 mb-4 certificate-card" data-date="6-2023" data-title="Introduction to Web Design and Development" data-institute="LinkedIn Learning">
             <div class="card border-0 shadow-sm">
               <a href="" data-bs-toggle="modal" data-bs-target="#pdfModal5" class="embed-responsive">
                 <img src="./assets/Certificates/LinkedIn Learning/Introduction to Web Design and Development.jpg" alt="Introduction to Web Design and Development" class="card-img-top">
@@ -112,7 +133,7 @@
           </div>
   
           <!-- Certificate 6 -->
-          <div class="col-md-6 col-lg-4 mb-4 certificate-card" data-date="6-2023" data-title="Python Essential Training">
+          <div class="col-md-6 col-lg-4 mb-4 certificate-card" data-date="6-2023" data-title="Python Essential Training" data-institute="LinkedIn Learning">
             <div class="card border-0 shadow-sm">
               <a href="" data-bs-toggle="modal" data-bs-target="#pdfModal6" class="embed-responsive">
                 <img src="./assets/Certificates/LinkedIn Learning/Python Essential Training.jpg" alt="Python Essential Training" class="card-img-top">
@@ -126,7 +147,7 @@
           </div>
 
           <!-- Certificate 7 -->
-          <div class="col-md-6 col-lg-4 mb-4 certificate-card" data-date="4-2023" data-title="Road Map To Software Testing">
+          <div class="col-md-6 col-lg-4 mb-4 certificate-card" data-date="4-2023" data-title="Road Map To Software Testing" data-institute="Career 180">
             <div class="card border-0 shadow-sm">
               <a href="" data-bs-toggle="modal" data-bs-target="#pdfModal7" class="embed-responsive">
                 <img src="./assets/Certificates/Career 180/Road Map To Software Testing.jpg" alt="Road Map To Software Testing" class="card-img-top">
@@ -140,7 +161,7 @@
           </div>
 
           <!-- Certificate 8 -->
-          <div class="col-md-6 col-lg-4 mb-4 certificate-card" data-date="4-2023" data-title="Introduction To UI & UX">
+          <div class="col-md-6 col-lg-4 mb-4 certificate-card" data-date="4-2023" data-title="Introduction To UI & UX" data-institute="Career 180">
             <div class="card border-0 shadow-sm">
               <a href="" data-bs-toggle="modal" data-bs-target="#pdfModal8" class="embed-responsive">
                 <img src="./assets/Certificates/Career 180/Introduction To UI & UX.jpg" alt="Introduction To UI & UX" class="card-img-top">
@@ -154,7 +175,7 @@
           </div>
 
           <!-- Certificate 9 -->
-          <div class="col-md-6 col-lg-4 mb-4 certificate-card" data-date="3-2023" data-title="Introduction To UI & UX">
+          <div class="col-md-6 col-lg-4 mb-4 certificate-card" data-date="3-2023" data-title="Introduction To UI & UX" data-institute="Career 180">
             <div class="card border-0 shadow-sm">
               <a href="" data-bs-toggle="modal" data-bs-target="#pdfModal9" class="embed-responsive">
                 <img src="./assets/Certificates/Career 180/UX Research.jpg" alt="UX Research" class="card-img-top">
@@ -332,7 +353,6 @@
     const backButton = document.querySelector('.back-button .btn');
 
     window.addEventListener('scroll', () => {
-      // Check if the user is at the top of the page
       if (window.scrollY === 0) {
         backButton.innerHTML = '<i class="fa-solid fa-user"></i>&nbsp; Portfolio';
       } else {
@@ -371,13 +391,11 @@
         button.classList.add('active');
         otherButton.disabled = true;
       } else {
-        // Reset sorting
         resetSorting();
         otherButton.disabled = false;
         button.classList.remove('active');
       }
 
-      // Toggle sorting state
       isSortingEnabled = !isSortingEnabled;
     }
 
@@ -385,6 +403,35 @@
       const container = document.getElementById('certificates-container');
       originalOrder.forEach(cert => container.appendChild(cert));
     }
+
+
+    // Search functionality
+    document.querySelector('.search-input').addEventListener('keyup', function() {
+      var searchType = document.querySelector('.search-category').value;
+      var searchValue = this.value.toLowerCase();
+      var certificates = document.querySelectorAll('.certificate-card');
+      var noResultsMessage = document.getElementById('no-results');
+      var searchQueryElement = document.getElementById('search-query');
+      
+      var resultsFound = false;
+      
+      certificates.forEach(function(card) {
+          var text = card.dataset[searchType].toLowerCase();
+          if (text.startsWith(searchValue)) {
+              card.style.display = "block";
+              resultsFound = true;
+          } else {
+              card.style.display = "none";
+          }
+      });
+
+      if (resultsFound) {
+          noResultsMessage.style.display = "none";
+      } else {
+          searchQueryElement.textContent = searchValue;
+          noResultsMessage.style.display = "block";
+      }
+    });
   </script>
 </body>
 </html>
