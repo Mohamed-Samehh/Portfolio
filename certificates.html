@@ -417,7 +417,7 @@
       
       certificates.forEach(function(card) {
           var text = card.dataset[searchType].toLowerCase();
-          if (text.startsWith(searchValue)) {
+          if (text.includes(searchValue)) {
               card.style.display = "block";
               resultsFound = true;
           } else {
