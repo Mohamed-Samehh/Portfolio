@@ -416,13 +416,11 @@
       const otherButtonType = type === 'date' ? 'alphabetical' : 'date';
       const otherButton = document.querySelector(`button[data-type="${otherButtonType}"]`);
 
-      // Reset current sorting first, regardless of what type is currently applied
       if (currentSortingType) {
         resetSorting();
         document.querySelector(`button[data-type="${currentSortingType}"]`).classList.remove('active');
       }
 
-      // If the new sorting type is not the same as the previous one, apply the sorting
       if (currentSortingType !== type) {
         certificates.sort((a, b) => {
           if (type === 'date') {
@@ -438,9 +436,9 @@
 
         certificates.forEach(cert => container.appendChild(cert));
         button.classList.add('active');
-        currentSortingType = type;  // Update the current sorting type
+        currentSortingType = type;
       } else {
-        currentSortingType = null;  // Reset the current sorting type if it matches
+        currentSortingType = null;
       }
     }
 
