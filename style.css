@@ -150,11 +150,11 @@
   .custom-img {
     width: 100px;
     height: auto;
-    border: 1px solid #ccc; /* Subtle border */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow */
-    background-color: #f8f9fa; /* Light gray background to match the site */
-    border-radius: 5px; /* Slightly rounded corners */
-    padding: 5px; /* Space between image and border */
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    padding: 5px;
   }
 
   /* Experience Section */
