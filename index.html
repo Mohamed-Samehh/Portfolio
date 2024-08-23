@@ -504,6 +504,19 @@
 
     //Night Mode
     var mode = document.getElementById("mode");
+    var isNightMode = localStorage.getItem("isNightMode") === "true";
+
+    if (isNightMode) {
+      document.body.classList.add("night-mode");
+      mode.innerHTML = "Light Mode&nbsp;";
+      document.getElementById("theme-toggler").querySelector("i").classList.add("fa-sun");
+      document.getElementById("theme-toggler").querySelector("i").classList.remove("fa-moon");
+    } else {
+      mode.innerHTML = "Dark Mode&nbsp;";
+      document.getElementById("theme-toggler").querySelector("i").classList.add("fa-moon");
+      document.getElementById("theme-toggler").querySelector("i").classList.remove("fa-sun");
+    }
+
     document.getElementById("theme-toggler").addEventListener("click", function () {
       document.body.classList.toggle("night-mode");
 
@@ -512,10 +525,12 @@
         icon.classList.remove("fa-moon");
         icon.classList.add("fa-sun");
         mode.innerHTML = "Light Mode&nbsp;";
+        localStorage.setItem("isNightMode", true);
       } else {
         icon.classList.remove("fa-sun");
         icon.classList.add("fa-moon");
         mode.innerHTML = "Dark Mode&nbsp;";
+        localStorage.setItem("isNightMode", false);
       }
     });
   </script>
