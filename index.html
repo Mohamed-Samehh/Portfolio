@@ -32,9 +32,11 @@
           <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
           <!-- Night mode button inside the navbar menu -->
           <li class="nav-item">
-            <button id="theme-toggler" class="btn btn-outline-light">
-              <i class="fas fa-moon"></i><span id="mode"> Dark Mode</span>
-            </button>
+            <div id="theme-toggler" class="nav-link d-inline-flex align-items-center">
+              <a href="javascript:void(0);">
+                <span id="mode">Dark Mode&nbsp;</span><i class="fas fa-moon"></i>
+              </a>
+            </div>
           </li>
         </ul>
       </div>
@@ -473,7 +475,7 @@
     window.addEventListener('scroll', function() {
         const sections = document.querySelectorAll('section');
         const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
-        const lastLink = navLinks[navLinks.length - 1];
+        const lastLink = navLinks[navLinks.length - 2]; //Gets the second last section (Contact)
         const firstLink = sections[0];
 
         let scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
@@ -509,11 +511,11 @@
       if (document.body.classList.contains("night-mode")) {
         icon.classList.remove("fa-moon");
         icon.classList.add("fa-sun");
-        mode.innerText = " Light Mode"
+        mode.innerHTML = "Light Mode&nbsp;";
       } else {
         icon.classList.remove("fa-sun");
         icon.classList.add("fa-moon");
-        mode.innerText = " Dark Mode"
+        mode.innerHTML = "Dark Mode&nbsp;";
       }
     });
   </script>
