@@ -19,6 +19,9 @@
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm sticky-top">
     <div class="container">
       <a class="navbar-brand" href="index.html">Mohamed Sameh Elkholy</a>
+      <button id="theme-toggler" class="btn btn-outline-light ms-2">
+        <i class="fas fa-moon"></i>
+      </button>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -36,7 +39,7 @@
   </nav>  
 
   <!-- Home Section -->
-  <header class="home-section text-center d-flex justify-content-center align-items-center">
+  <header id="home" class="home-section text-center d-flex justify-content-center align-items-center">
     <div class="container">
       <h1 class="text-light animate-fadeIn">Mohamed Sameh Elkholy</h1>
       <p class="lead text-light">Software Engineer | Full Stack Developer Specialized in Web Technologies</p>
@@ -55,7 +58,7 @@
   </section>  
 
   <!-- Skills Section -->
-  <section id="skills" class="bg-light py-5 text-center">
+  <section id="skills" class="bg py-5 text-center">
     <div class="container">
       <h2>Skills</h2>
       <div class="row mt-4">
@@ -358,7 +361,7 @@
   </section>
 
 <!-- Education Section -->
-<section id="education" class="bg-light py-5 text-center">
+<section id="education" class="bg py-5 text-center">
   <div class="container">
       <h2>Education</h2>
       
@@ -368,14 +371,14 @@
         <div class="d-flex justify-content-center align-items-center mb-3">
           <!-- BUE Card -->
           <a href="https://www.bue.edu.eg/" target="_blank" class="card-link">
-            <div class="card border-0 shadow-sm" style="width: 150px; height: 150px;">
-              <img src="./assets/BUE.jpeg" class="card-img-top img-fluid rounded-circle" alt="BUE">
-            </div>
+            <div class="card border-0 shadow-sm d-flex justify-content-center align-items-center" style="width: 150px; height: 150px;">
+              <img src="./assets/BUE.png" class="card-img img-fluid" style="width: 80px; height: 90px;" alt="BUE">
+            </div>            
           </a>
           <!-- LSBU Card -->
           <a href="https://www.lsbu.ac.uk/" target="_blank" class="card-link">
-            <div class="card border-0 shadow-sm" style="width: 150px; height: 150px;">
-              <img src="./assets/LSBU.webp" class="card-img-top img-fluid rounded-circle" alt="LSBU">
+            <div class="card border-0 shadow-sm d-flex justify-content-center align-items-center" style="width: 150px; height: 150px;">
+              <img src="./assets/LSBU.png" class="card-img img-fluid" style="width: 90px; height: 100px;" alt="LSBU">
             </div>
           </a>
         </div>
@@ -492,6 +495,20 @@
                 }
             });
         }
+    });
+
+    //Night Mode
+    document.getElementById("theme-toggler").addEventListener("click", function () {
+      document.body.classList.toggle("night-mode");
+
+      const icon = this.querySelector("i");
+      if (document.body.classList.contains("night-mode")) {
+        icon.classList.remove("fa-moon");
+        icon.classList.add("fa-sun");
+      } else {
+        icon.classList.remove("fa-sun");
+        icon.classList.add("fa-moon");
+      }
     });
   </script>
 </body>
