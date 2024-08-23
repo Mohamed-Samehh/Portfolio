@@ -65,46 +65,6 @@
     background-color: #6c757d;
     border-color: #6c757d;
   }
-
-  /* Night Mode */
-  .night-mode {
-    background-color: #343a40;
-    color: white;
-  }
-
-  .night-mode .navbar {
-    background-color: #212529;
-  }
-
-  .night-mode .card {
-    background-color: #495057;
-    color: white;
-  }
-
-  .night-mode .btn-primary {
-    background-color: #6c757d;
-    border-color: #6c757d;
-  }
-
-  .night-mode #home {
-    background-color: #212529;
-  }
-
-  .night-mode #about,
-  .night-mode #skills,
-  .night-mode #education,
-  .night-mode #experience,
-  .night-mode #contact {
-    background-color: #343a40;
-  }
-
-  .night-mode #about p,
-  .night-mode #skills p,
-  .night-mode #education p,
-  .night-mode #experience p,
-  .night-mode #contact p {
-    color: #f8f9fa;
-  }
   
   /* Modal Styles for Night Mode */
   .night-mode .modal-content {
@@ -306,4 +266,44 @@
 
   section {
     scroll-margin-top: 50px;
+  }
+
+  /* Night Mode */
+  .night-mode {
+    background-color: #343a40;
+    color: white;
+  }
+
+  .night-mode .navbar {
+    background-color: #212529;
+  }
+
+  .night-mode .card {
+    background-color: #495057;
+    color: white;
+  }
+
+  .night-mode .btn-primary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+  }
+
+  .night-mode #home {
+    background-color: #212529;
+  }
+
+  .night-mode #about,
+  .night-mode #skills,
+  .night-mode #education,
+  .night-mode #experience,
+  .night-mode #contact {
+    background-color: #343a40;
+  }
+
+  .night-mode #about p,
+  .night-mode #skills p,
+  .night-mode #education p,
+  .night-mode #experience p,
+  .night-mode #contact p {
+    color: #f8f9fa;
   }
