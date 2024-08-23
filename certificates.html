@@ -477,21 +477,11 @@
     });
 
     // Check for night mode on page load
-  var isNightMode = localStorage.getItem("isNightMode") === "true";
+    var isNightMode = localStorage.getItem("isNightMode") === "true";
 
-  if (isNightMode) {
-    document.body.classList.add("night-mode");
-  }
-
-  // function toggleNightMode() {
-  //   var bodyElement = document.body;
-  //   bodyElement.classList.toggle("night-mode");
-
-  //   var isNightModeActive = bodyElement.classList.contains("night-mode");
-  //   localStorage.setItem("isNightMode", isNightModeActive);
-  // }
-
-  // document.getElementById("nightModeToggle").addEventListener("click", toggleNightMode);
+    if (isNightMode) {
+      document.body.classList.add("night-mode");
+    }
   </script>
 </body>
 </html>
