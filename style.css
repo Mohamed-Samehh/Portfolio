@@ -65,20 +65,6 @@
     background-color: #6c757d;
     border-color: #6c757d;
   }
-  
-  /* Modal Styles for Night Mode */
-  .night-mode .modal-content {
-    background-color: #495057;
-    color: #f8f9fa;
-  }
-  
-  .night-mode .modal-header {
-    border-bottom: 1px solid #6c757d;
-  }
-  
-  .night-mode .modal-footer {
-    border-top: 1px solid #6c757d;
-  }
 
   /* About Section */
   #about {
@@ -265,7 +251,7 @@
   }
 
   section {
-    scroll-margin-top: 50px;
+    scroll-margin-top: 50px; /* Where to stop above a section when clicked */
   }
 
   /* Night Mode */
@@ -306,4 +292,18 @@
   .night-mode #experience p,
   .night-mode #contact p {
     color: #f8f9fa;
+  }
+
+  /* Modal Styles for Night Mode */
+  .night-mode .modal-content {
+    background-color: #495057;
+    color: #f8f9fa;
+  }
+  
+  .night-mode .modal-header {
+    border-bottom: 1px solid #6c757d;
+  }
+  
+  .night-mode .modal-footer {
+    border-top: 1px solid #6c757d;
   }
