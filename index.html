@@ -33,7 +33,7 @@
           <!-- Night mode button inside the navbar menu -->
           <li class="nav-item">
             <button id="theme-toggler" class="btn btn-outline-light ms-2">
-              <i class="fas fa-moon"></i>
+              <i class="fas fa-moon"></i><span id="mode"> Dark Mode</span>
             </button>
           </li>
         </ul>
@@ -501,6 +501,7 @@
     });
 
     //Night Mode
+    var mode = document.getElementById("mode");
     document.getElementById("theme-toggler").addEventListener("click", function () {
       document.body.classList.toggle("night-mode");
 
@@ -508,9 +509,11 @@
       if (document.body.classList.contains("night-mode")) {
         icon.classList.remove("fa-moon");
         icon.classList.add("fa-sun");
+        mode.innerText = " Light Mode"
       } else {
         icon.classList.remove("fa-sun");
         icon.classList.add("fa-moon");
+        mode.innerText = " Dark Mode"
       }
     });
   </script>
