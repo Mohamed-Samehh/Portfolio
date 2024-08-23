@@ -1,7 +1,7 @@
   /* General styles */
   body {
     font-family: 'Roboto', sans-serif;
-    background: linear-gradient(to right, #f8f9fa, #e9ecef);
+    background: #f0f0f0;
     color: #333;
     margin: 0;
     padding: 0;
@@ -202,4 +202,53 @@
     .sorting-buttons .btn {
       font-size: 0.8rem;
     }
+  }
+
+
+  /* Night Mode */
+  .night-mode {
+    background-color: #3b434a;
+    color: white;
+  }
+
+  .night-mode .card-body {
+    background-color: #343a40;
+    color: white;
+  }
+
+  .night-mode .btn {
+    background-color: #6c757d;
+    color: white;
+    border-color: #6c757d;
+  }
+  
+  .night-mode .btn:hover {
+    background-color: #5a6268;
+    border-color: #5a6268;
+  }
+
+  .night-mode a {
+    color: #bb86fc;
+  }
+
+  .night-mode .dropdown-menu {
+    background-color: #343a40;
+    color: white;
+  }
+
+  .night-mode .dropdown-item {
+    color: white;
+  }
+
+  .night-mode .dropdown-item:hover {
+    background-color: #6c757d;
+  }
+
+  .night-mode .modal-content {
+    background-color: #495057;
+    color: #f8f9fa;
+  }
+
+  .night-mode .modal-header {
+    border-bottom: 1px solid #6c757d;
   }
