@@ -220,23 +220,10 @@
     color: white;
     border-color: #6c757d;
   }
-
+  
   .night-mode .btn:hover {
     background-color: #5a6268;
     border-color: #5a6268;
-  }
-
-  .night-mode .btn#Portfolio {
-    background-color: transparent;
-    color: white;
-    border-color: #6c757d;
-    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
-  }
-
-  .night-mode .btn#Portfolio:hover {
-      background-color: #5a6268;
-      color: white;
-      border-color: #5a6268;
   }
 
   .night-mode a {
