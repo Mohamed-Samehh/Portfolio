@@ -13,7 +13,7 @@
 
   /* Back Button Styles */
   .back-button {
-    position: fixed; /* try absolute for a non-sticky button */
+    position: fixed; /* change to absolute for a non-sticky button */
     top: 15px;
     right: 15px;
     z-index: 1000;
@@ -263,4 +263,8 @@
 
   .night-mode .modal-header {
     border-bottom: 1px solid #6c757d;
+  }
+
+  .night-mode .modal-footer {
+    border-top: 1px solid #6c757d;
   }
