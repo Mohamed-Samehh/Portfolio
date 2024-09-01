@@ -5,7 +5,6 @@
     line-height: 1.6;
     background-color: #f8f9fa;
     transition: background-color 0.3s ease, color 0.3s ease;
-    will-change: background-color, color;
   }
 
   section {
@@ -240,6 +239,7 @@
     background-color: #343a40;
     color: white;
     padding: 60px 0;
+    font-family: "Poppins", sans-serif;
   }
 
   #contact p {
