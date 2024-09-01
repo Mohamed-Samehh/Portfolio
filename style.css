@@ -3,6 +3,13 @@
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
     background-color: #f8f9fa;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    will-change: background-color, color;
+  }
+
+  section {
+    scroll-margin-top: 50px; /* Where to stop above a section when clicked */
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 
   h2 {
@@ -17,6 +24,18 @@
 
   .container {
     max-width: 1100px; /* size of page */
+  }
+
+  .btn-outline-light {
+    color: #adb5bd;
+    border-color: #adb5bd;
+    transition: color 0.3s ease, border-color 0.3s ease;
+  }
+
+  .btn-outline-light:hover {
+    color: #343a40;
+    border-color: #343a40;
+    background-color: #e0e0e0;
   }
 
   /* Navbar */
@@ -41,7 +60,28 @@
     text-align: center;
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./assets/Home-BG.jpg');
     background-size: cover;
-    /* background-position: center; */
+    background-attachment: absolute;
+    background-position: center;
+    animation: backgroundScroll 20s linear infinite;
+  }
+
+  /* Background Scroll Animation */
+  @keyframes backgroundScroll {
+    0% {
+      background-position: center top;
+    }
+    100% {
+      background-position: center bottom;
+    }
+  }
+
+  /* Responsive Image for Mobile */
+  @media (max-width: 768px) {
+    .home-section {
+      background-attachment: scroll;
+      background-position: center;
+      background-size: cover;
+    }
   }
 
   .home-section i {
@@ -128,6 +168,12 @@
 
   .card i {
     margin-bottom: 15px;
+    color: #666;
+    transition: color 0.3s ease;
+  }
+
+  .card i:hover {
+    color: #333;
   }
 
   .card:hover {
@@ -253,60 +299,49 @@
     }
   }
 
-  section {
-    scroll-margin-top: 50px; /* Where to stop above a section when clicked */
-  }
-
   /* Night Mode */
   .night-mode {
-    background-color: #2c3034;
-    color: white;
+    background-color: #2a2a2a;
+    color: #dcdcdc;
   }
 
   .night-mode .navbar {
-    background-color: #212529;
+    background-color: #1f1f1f;
   }
 
   .night-mode .card {
-    background-color: #495057;
-    color: white;
+    background-color: #222;
+    color: #ddd;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   }
 
-  .night-mode .btn-primary {
-    background-color: #6c757d;
-    border-color: #6c757d;
+  .night-mode .card i {
+    color: #bbb;
+    transition: color 0.3s ease;
+  }
+  
+  .night-mode .card i:hover {
+    color: #fff;
   }
 
   .night-mode #home {
-    background-color: #212529;
+    background-color: #1b1b1b;
   }
 
-  .night-mode #about,
-  .night-mode #skills,
-  .night-mode #education,
-  .night-mode #experience,
-  .night-mode #contact {
-    background-color: #2c3034;
-  }
-
-  .night-mode #about p,
-  .night-mode #skills p,
-  .night-mode #education p,
-  .night-mode #experience p,
-  .night-mode #contact p {
-    color: #f8f9fa;
+  .night-mode #education {
+      background-color: #2a2a2a;
   }
 
   /* Modal Styles for Night Mode */
   .night-mode .modal-content {
-    background-color: #495057;
-    color: #f8f9fa;
+    background-color: #3c3c3c;
+    color: #e0e0e0;
   }
-  
+
   .night-mode .modal-header {
-    border-bottom: 1px solid #6c757d;
+    border-bottom: 1px solid #556270;
   }
-  
+
   .night-mode .modal-footer {
-    border-top: 1px solid #6c757d;
+    border-top: 1px solid #556270;
   }
