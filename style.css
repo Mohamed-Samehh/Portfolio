@@ -39,6 +39,9 @@
     align-items: center;
     flex-direction: column;
     text-align: center;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./assets/Home-BG.jpg');
+    background-size: cover;
+    /* background-position: center; */
   }
 
   .home-section i {
@@ -256,7 +259,7 @@
 
   /* Night Mode */
   .night-mode {
-    background-color: #343a40;
+    background-color: #2c3034;
     color: white;
   }
 
@@ -283,7 +286,7 @@
   .night-mode #education,
   .night-mode #experience,
   .night-mode #contact {
-    background-color: #343a40;
+    background-color: #2c3034;
   }
 
   .night-mode #about p,
