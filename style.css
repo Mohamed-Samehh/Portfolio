@@ -26,6 +26,15 @@
     max-width: 1100px; /* size of page */
   }
 
+  .dark-mode-toggle {
+    color: #007bff;
+    transition: color 0.25s ease;
+  }
+
+  .dark-mode-toggle:hover {
+    color: #0056b3;
+  }
+
   .btn-outline-light {
     color: #adb5bd;
     border-color: #adb5bd;
