@@ -32,7 +32,7 @@
   }
 
   .dark-mode-toggle:hover {
-    color: #0056b3;
+    color: #0070d1;
   }
 
   .btn-outline-light {
@@ -197,6 +197,15 @@
 
   .card:hover {
     transform: scale(1.05);
+  }
+
+  .modal-header {
+    display: flex;
+    justify-content: center;
+  }
+
+  .modal-title {
+    text-align: center;
   }
 
   /* Education Section */
