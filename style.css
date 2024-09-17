@@ -17,9 +17,12 @@
     font-weight: 700;
   }
 
-  nav a {
+  a {
     text-decoration: none;
-    /* color: inherit; */
+  }
+
+  .modal-link a {
+    text-decoration: underline;
   }
 
   .container {
