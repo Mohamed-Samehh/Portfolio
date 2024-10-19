@@ -29,6 +29,10 @@
     max-width: 1100px; /* size of page */
   }
 
+  .custom-shadow {
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(0, 0, 0, 0.2) !important;
+  }
+
   .dark-mode-toggle {
     color: #007bff;
     transition: color 0.25s ease;
@@ -264,6 +268,11 @@
 
   /* Contact Section */
   #contact {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./assets/Contact-BG.jpg');
+    background-size: cover;
+    background-attachment: absolute;
+    background-position: center;
+    background-repeat: no-repeat;
     background-color: #343a40;
     color: white;
     padding: 60px 0;
