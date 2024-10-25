@@ -25,6 +25,7 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#resume">Resume</a></li>
           <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
           <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
           <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
@@ -57,10 +58,42 @@
     <div class="container">
       <h2>About</h2>
       <p class="lead">
-        I am a software engineer with a robust background in both front-end and back-end development. My skills have been shaped by rigorous academic coursework and practical project experience. Proficient in critical thinking and problem-solving, I am eager to apply my expertise to a dynamic team and contribute to innovative and impactful project outcomes.
+        As a software engineer in the IT industry, I have established knowledge and capabilities in software development as a full-stack developer. Additionally, I have further developed my technical competence through academic education and hands-on projects in various environments. I consider myself flexible and client-oriented, with an analytical and creative approach to problem-solving. I am ready to add value to both independent endeavors and teams within dynamic company environments. I look forward to using my abilities to achieve desired results for both the agency and the client.
       </p>
     </div>
-  </section>  
+  </section>
+
+  <!-- Resume Section -->
+  <section id="resume" class="bg-light py-5 text-center">
+    <div class="container">
+        <h2>Resume</h2>
+    <i class="fa-solid fa-file-pdf fa-3x text-primary mb-2"></i>
+        <p>View my resume to learn more about my professional journey and skills.</p>
+        <a href="" class="btn btn-outline-primary btn-lg mt-2 rounded-pill" data-bs-toggle="modal" data-bs-target="#resumeModal">View Resume</a>
+    </div>
+  </section>
+
+  <!-- Resume Modal -->
+  <div class="modal fade" id="resumeModal" tabindex="-1" aria-labelledby="resumeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="resumeModalLabel">My Resume</h5>
+          <a href="./assets/Mohamed-Sameh-CV.pdf" class="btn btn-outline-secondary ms-auto" target="_blank">
+            <i class="fas fa-external-link-alt"></i>
+          </a>
+        </div>
+        <div class="modal-body">
+          <object data="./assets/Mohamed-Sameh-CV.pdf" type="application/pdf">
+            <p class="modal-link">Your browser does not support PDFs. <a href="./assets/Mohamed-Sameh-CV.pdf">Download the PDF</a></p>
+          </object>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Skills Section -->
   <section id="skills" class="bg py-5 text-center">
@@ -275,57 +308,56 @@
     </div>
   </section>
 
-<!-- Education Section -->
-<section id="education" class="bg py-5 text-center">
-  <div class="container">
-      <h2>Education</h2>
-      
-      <!-- University Section -->
-      <div class="mt-5">
-        <h3 class="mb-3">University</h3>
-        <div class="d-flex justify-content-center align-items-center mb-3">
-          <!-- BUE Card -->
-          <a href="https://www.bue.edu.eg/" target="_blank" class="card-link">
-            <div class="card border-0 shadow-sm d-flex justify-content-center align-items-center" style="width: 150px; height: 150px;">
-              <img src="./assets/BUE.png" class="card-img img-fluid" style="width: 80px; height: 90px;" alt="BUE">
-            </div>            
-          </a>
-          <!-- LSBU Card -->
-          <a href="https://www.lsbu.ac.uk/" target="_blank" class="card-link">
-            <div class="card border-0 shadow-sm d-flex justify-content-center align-items-center" style="width: 150px; height: 150px;">
-              <img src="./assets/LSBU.png" class="card-img img-fluid" style="width: 90px; height: 100px;" alt="LSBU">
-            </div>
-          </a>
-        </div>
-        <div class="mt-3">
-          <p><strong>The British University in Egypt</strong>, in partnership with <strong>London South Bank University</strong></p>
-          <p><strong>Faculty of Informatics and Computer Science</strong>, Software Engineering Major</p>
-          <p>Start Date: September 2021 | Graduation Date: June 2025</p>
-          <p>Grade: B+ | GPA: 3.5</p>
-        </div>
-      </div>
-      
-      <!-- Certifications Section -->
-      <div class="mt-5">
-          <h3>Certifications and Courses</h3>
-          <i class="fa-solid fa-award fa-3x text-primary mb-2 mt-2"></i>
-          
-            <ul class="list-unstyled mt-4">
-                <li class="mb-3"><strong>ASPNET & Angular from Scratch</strong> - Udemy</li>
-                <li class="mb-3"><strong>Node.js Back-end Development</strong> - AITB</li>
-                <li class="mb-3"><strong>Bootstrap & React Bootcamp</strong> - Udemy</li>
-                <li class="mb-3"><strong>The Complete Node.js Course</strong> - MaharaTech</li>
-                <li class="mb-3"><strong>React JS</strong> - MaharaTech</li>
-                <li class="mb-3"><strong>JavaScript ES6 & Beyond</strong> - MaharaTech</li>
-            </ul>
+  <!-- Education Section -->
+  <section id="education" class="bg py-5 text-center">
+    <div class="container">
+        <h2>Education</h2>
         
-          <div class="mt-4">
-            <a href="certificates.html" class="btn btn-outline-primary btn-lg mt-2 rounded-pill">View Certifications</a>
+        <!-- University Section -->
+        <div class="mt-5">
+          <h3 class="mb-3">University</h3>
+          <div class="d-flex justify-content-center align-items-center mb-3">
+            <!-- BUE Card -->
+            <a href="https://www.bue.edu.eg/" target="_blank" class="card-link">
+              <div class="card border-0 shadow-sm d-flex justify-content-center align-items-center" style="width: 150px; height: 150px;">
+                <img src="./assets/BUE.png" class="card-img img-fluid" style="width: 80px; height: 90px;" alt="BUE">
+              </div>            
+            </a>
+            <!-- LSBU Card -->
+            <a href="https://www.lsbu.ac.uk/" target="_blank" class="card-link">
+              <div class="card border-0 shadow-sm d-flex justify-content-center align-items-center" style="width: 150px; height: 150px;">
+                <img src="./assets/LSBU.png" class="card-img img-fluid" style="width: 90px; height: 100px;" alt="LSBU">
+              </div>
+            </a>
           </div>
-      </div>
+          <div class="mt-3">
+            <p><strong>The British University in Egypt</strong>, in partnership with <strong>London South Bank University</strong></p>
+            <p><strong>Faculty of Informatics and Computer Science</strong>, Software Engineering Major</p>
+            <p>Start Date: September 2021 | Graduation Date: June 2025</p>
+            <p>Grade: B+ | GPA: 3.5</p>
+          </div>
+        </div>
+        
+        <!-- Certifications Section -->
+        <div class="mt-5">
+            <h3>Certifications and Courses</h3>
+            <i class="fa-solid fa-award fa-3x text-primary mb-2 mt-2"></i>
+            
+              <ul class="list-unstyled mt-4">
+                  <li class="mb-3"><strong>ASPNET & Angular from Scratch (67hrs)</strong> - Udemy</li>
+                  <li class="mb-3"><strong>Node.js Back-end Development (50hrs)</strong> - AITB</li>
+                  <li class="mb-3"><strong>Mern Stack Developer (26hrs)</strong> - MaharaTech</li>
+                  <li class="mb-3"><strong>ReactJS Developer (35hrs)</strong> - MaharaTech</li>
+                  <li class="mb-3"><strong>Back-End Developer (21hrs)</strong> - MaharaTech</li>
+              </ul>
+          
+            <div class="mt-4">
+              <a href="certificates.html" class="btn btn-outline-primary btn-lg mt-2 rounded-pill">View Certifications</a>
+            </div>
+        </div>
 
-  </div>
-</section>
+    </div>
+  </section>
 
   <!-- Experience Section -->
   <section id="experience" class="py-5 text-center">
