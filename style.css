@@ -138,6 +138,11 @@
     margin: 0 auto;
   }
 
+  /* Resume Section */
+  #resume {
+    padding: 60px 0;
+  }
+
   /* Skills Section */
   #skills {
     padding: 60px 0;
@@ -375,10 +380,6 @@
   .night-mode #home {
     background-color: #1b1b1b;
   }
-
-  .night-mode #resume {
-    background-color: #2a2a2a !important;
-}
 
   .night-mode #education {
       background-color: #2a2a2a;
