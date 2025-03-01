@@ -53,6 +53,20 @@
     outline: none;
   }
 
+  #theme-toggler.nav-link {
+    cursor: pointer;
+    text-decoration: none !important;
+    color: inherit !important;
+  }
+
+  #theme-toggler.nav-link:hover, 
+  #theme-toggler.nav-link:focus, 
+  #theme-toggler.nav-link:active {
+      background: none !important;
+      color: inherit !important;
+      text-decoration: none !important;
+  }
+
   section {
     scroll-margin-top: 50px; /* Where to stop above a section when clicked */
     transition: background-color 0.3s ease, color 0.3s ease;
@@ -73,86 +87,6 @@
 
   .container {
     max-width: 1100px; /* size of page */
-  }
-
-  /* General section styling */
-  #experience {
-    background-color: #f9f9f9;
-    padding: 60px 0;
-  }
-
-  #experience-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-  }
-
-  #experience-container .col-md-5 {
-    display: flex;
-    align-items: stretch;
-  }
-
-  .experience-card {
-    background: white;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 100%;
-    min-height: 420px;
-  }
-
-  .company-logo {
-    width: 80px;
-    height: auto;
-    margin-bottom: 15px;
-  }
-
-  .experience-card h4 {
-    font-size: 20px;
-    margin-bottom: 5px;
-  }
-
-  .experience-card h4 span {
-    font-size: 18px;
-    color: #555;
-  }
-
-  .experience-card h5 {
-    font-size: 16px;
-    color: #777;
-    margin-bottom: 15px;
-  }
-
-  .experience-card p {
-    font-size: 15px;
-    color: #666;
-    flex-grow: 1;
-    margin-bottom: 15px;
-  }
-
-  .view-certificate {
-    font-size: 15px;
-    padding: 8px 20px;
-    border-radius: 25px;
-    transition: all 0.3s ease;
-    align-self: center;
-  }
-
-  @media (max-width: 768px) {
-    #experience-container {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .experience-card {
-        width: 100%;
-        min-height: auto;
-    }
   }
 
   .custom-shadow {
@@ -381,20 +315,91 @@
 
   /* Experience Section */
   #experience {
+    background-color: #f9f9f9;
     padding: 60px 0;
   }
 
-  #experience i {
+  #experience-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  #experience-container .col-md-5 {
+    display: flex;
+    align-items: stretch;
+  }
+
+  .experience-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 420px;
+    transition: transform 0.3s, background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .company-logo {
+    width: 80px;
+    height: auto;
     margin-bottom: 15px;
   }
 
-  #experience h4 {
-    font-size: 1.25rem;
+  .experience-card h4 {
+    font-size: 20px;
     margin-bottom: 1rem;
+    transition: color 0.3s ease;
   }
 
-  #experience p {
-    font-size: 1rem;
+  .experience-card h4 span {
+    font-size: 18px;
+    color: #555;
+    transition: color 0.3s ease;
+  }
+
+  .experience-card h5 {
+    font-size: 16px;
+    color: #777;
+    margin-bottom: 15px;
+    transition: color 0.3s ease;
+  }
+
+  .experience-card p {
+    font-size: 15px;
+    color: #666;
+    flex-grow: 1;
+    margin-bottom: 15px;
+    transition: color 0.3s ease;
+  }
+
+  .experience-card:hover {
+    transform: scale(1.05);
+  }
+
+  .view-certificate {
+    font-size: 15px;
+    padding: 8px 20px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    align-self: center;
+  }
+
+  @media (max-width: 768px) {
+    #experience-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .experience-card {
+        width: 100%;
+        min-height: auto;
+    }
   }
 
   /* Contact Section */
@@ -484,14 +489,19 @@
     color: #dcdcdc;
   }
 
-  .night-mode .navbar {
-    background-color: #1f1f1f;
-  }
-
-  .night-mode .card {
+  .night-mode .card,
+  .night-mode .experience-card {
     background-color: #222;
     color: #ddd;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    border: 1px solid #444 !important;
+  }
+
+  .night-mode h4,
+  .night-mode h4 span,
+  .night-mode h5,
+  .night-mode p {
+      color: #ddd !important;
   }
 
   .night-mode .card i {
@@ -510,6 +520,10 @@
   .night-mode #education {
       background-color: #2a2a2a;
   }
+
+  .night-mode #experience {
+    background-color: #2a2a2a;
+}
 
   .night-mode .modal-link a {
     color: #80CBC4;
