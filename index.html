@@ -16,33 +16,34 @@
 </head>
 <body>
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm sticky-top">
-    <div class="container">
-      <a class="navbar-brand" href="index.html">Mohamed Sameh Elkholy</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#resume">Resume</a></li>
-          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-          <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
-          <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-          <!-- Night mode button inside the navbar menu -->
-          <li class="nav-item">
-            <div id="theme-toggler" class="nav-link d-inline-flex align-items-center">
-              <a href="javascript:void(0);">
-                <strong class="dark-mode-toggle"><span id="mode">Dark Mode&nbsp;</span><i class="fas fa-moon"></i></strong>
-              </a>
-            </div>
-          </li>
-        </ul>
-      </div>
+  <nav class="navbar navbar-dark bg-dark shadow-sm fixed-top">
+    <div class="container d-flex justify-content-between align-items-center">
+        <a class="navbar-brand" href="index.html">Mohamed Sameh Elkholy</a>
+        <button class="navbar-toggler" type="button" id="navbar-toggler">
+            <span class="navbar-toggler-icon"></span>
+        </button>
     </div>
   </nav>
+
+  <!-- Sidebar Navigation -->
+  <div class="sidebar-nav" id="sidebarNav">
+    <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#resume">Resume</a></li>
+        <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+        <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        <li class="nav-item">
+            <div id="theme-toggler" class="nav-link d-inline-flex align-items-center">
+                <a href="javascript:void(0);">
+                    <strong class="dark-mode-toggle"><span id="mode">Dark Mode&nbsp;</span><i class="fas fa-moon"></i></strong>
+                </a>
+            </div>
+        </li>
+    </ul>
+  </div>
 
   <!-- Home Section -->
   <header id="home" class="home-section text-center d-flex justify-content-center align-items-center border-bottom border-light custom-shadow">
@@ -139,170 +140,8 @@
   <section id="projects" class="py-5 text-center">
     <div class="container">
       <h2>Projects</h2>
-      <div class="row mt-4">
-
-        <!-- Project 5 -->
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="card border-0 shadow-sm mb-4">
-            <i class="fa fa-line-chart fa-5x text-primary mt-4"></i>
-            <div class="card-body">
-              <h5 class="card-title">Financial-Advisor<br>(AI-Powered Financial Advisor)</h5>
-              <p class="card-text">Built with Angular, Bootstrap, Laravel, Flask, MySQL.</p>
-              <a href="https://github.com/Mohamed-Samehh/Financial-Advisor" target="_blank" class="btn btn-outline-primary">View Project</a>
-              <button type="button" class="btn position-absolute top-0 end-0 p-0 m-3" style="border: none; height: 0;" data-bs-toggle="modal" data-bs-target="#projectModal5">
-                <i class="fas fa-info-circle" style="font-size: 24px;"></i>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Modal for Project 5 -->
-        <div class="modal fade" id="projectModal5" tabindex="-1" aria-labelledby="projectModalLabel5" aria-hidden="true">
-          <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="projectModalLabel5">Financial-Advisor (AI-Powered Financial Advisor)</h5>
-              </div>
-              <div class="modal-body">
-                <p>Work still in progress...</p>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project 4 -->
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="card border-0 shadow-sm mb-4">
-            <i class="fa fa-university fa-5x text-primary mt-4"></i>
-            <div class="card-body">
-              <h5 class="card-title">Spec Recommender<br>(BUE Specialization Recommender)</h5>
-              <p class="card-text">Built with React Vite, Node.js, Express, MongoDB.</p>
-              <a href="https://github.com/Mohamed-Samehh/BUE-Spec-Path" target="_blank" class="btn btn-outline-primary">View Project</a>
-              <button type="button" class="btn position-absolute top-0 end-0 p-0 m-3" style="border: none; height: 0;" data-bs-toggle="modal" data-bs-target="#projectModal4">
-                <i class="fas fa-info-circle" style="font-size: 24px;"></i>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Modal for Project 4 -->
-        <div class="modal fade" id="projectModal4" tabindex="-1" aria-labelledby="projectModalLabel4" aria-hidden="true">
-          <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="projectModalLabel4">Spec Recommender (BUE Specialization Recommender)</h5>
-              </div>
-              <div class="modal-body">
-                <p>Spec Recommender is a full-stack web application designed to help users choose their career paths with ease and confidence. Built with a React Vite frontend and an Express.js backend, the platform offers a seamless user experience with responsive and intuitive design. Users can receive personalized career recommendations based on academic performance and preferences, explore specialized career options, and access a knowledge hub with courses sourced from Coursera's API. The app integrates MongoDB Atlas for efficient data management and supports user interactions like creating reviews and updating profiles.</p>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project 3 -->
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="card border-0 shadow-sm mb-4">
-            <i class="fas fa-pencil-alt fa-5x text-primary mt-4"></i>
-            <div class="card-body">
-              <h5 class="card-title">Blog<br>(Backend for Blog Website)</h5>
-              <p class="card-text">Built with Laravel and MySQL.</p>
-              <a href="https://github.com/Mohamed-Samehh/Blog" target="_blank" class="btn btn-outline-primary">View Project</a>
-              <button type="button" class="btn position-absolute top-0 end-0 p-0 m-3" style="border: none; height: 0;" data-bs-toggle="modal" data-bs-target="#projectModal3">
-                <i class="fas fa-info-circle" style="font-size: 24px;"></i>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Modal for Project 3 -->
-        <div class="modal fade" id="projectModal3" tabindex="-1" aria-labelledby="projectModalLabel3" aria-hidden="true">
-          <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="projectModalLabel3">Blog (Backend for Blog Website)</h5>
-              </div>
-              <div class="modal-body">
-                <p>This is a blog application built with Laravel, featuring core functionalities like user authentication, blog post management, nested comments, and a like system. It also includes media management for image uploads using Spatie Media Library, and efficient pagination for posts and comments. This project demonstrates my ability to develop robust backend systems for modern web applications using Laravel.</p>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project 2 -->
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="card border-0 shadow-sm mb-4">
-            <i class="fas fa-utensils fa-5x text-primary mt-4"></i>
-            <div class="card-body">
-              <h5 class="card-title">Recipe Finder<br>(Cooking Recipes Website)</h5>
-              <p class="card-text">Built with Angular and Bootstrap.</p>
-              <a href="https://github.com/Mohamed-Samehh/Recipe-Finder" target="_blank" class="btn btn-outline-primary">View Project</a>
-              <a href="https://mohamed-samehh.github.io/Recipe-Finder/" target="_blank" class="btn btn-outline-primary">Live Demo</a>
-              <button type="button" class="btn position-absolute top-0 end-0 p-0 m-3" style="border: none; height: 0;" data-bs-toggle="modal" data-bs-target="#projectModal2">
-                <i class="fas fa-info-circle" style="font-size: 24px;"></i>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Modal for Project 2 -->
-        <div class="modal fade" id="projectModal2" tabindex="-1" aria-labelledby="projectModalLabel2" aria-hidden="true">
-          <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="projectModalLabel2">Recipe Finder (Cooking Recipes Website)</h5>
-              </div>
-              <div class="modal-body">
-                <p>Recipe Finder is an Angular-based web application that lets users explore and discover recipes from various sources. Featuring an interactive recipe search function and detailed recipe views, the application offers seamless navigation through a Bootstrap-styled responsive design. Users can suggest new recipes via a form, browse meals by categories and geographical areas, and view detailed information such as ingredients and instructions for each dish. The app dynamically fetches data from external recipe APIs, ensuring an engaging and easy-to-use experience for all users.
-                </p>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project 1 -->
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="card border-0 shadow-sm mb-4">
-            <i class="fas fa-users fa-5x text-primary mt-4"></i>
-            <div class="card-body">
-              <h5 class="card-title">PeerLink<br>(Social Media Platform)</h5>
-              <p class="card-text">Built with HTML, CSS, JavaScript, jQuery, Ajax, PHP, and MySQL.</p>
-              <a href="https://github.com/Mohamed-Samehh/PeerLink" target="_blank" class="btn btn-outline-primary">View Project</a>
-              <button type="button" class="btn position-absolute top-0 end-0 p-0 m-3" style="border: none; height: 0;" data-bs-toggle="modal" data-bs-target="#projectModal1">
-                <i class="fas fa-info-circle" style="font-size: 24px;"></i>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Modal for Project 1 -->
-        <div class="modal fade" id="projectModal1" tabindex="-1" aria-labelledby="projectModalLabel1" aria-hidden="true">
-          <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="projectModalLabel1">PeerLink (Social Media Platform)</h5>
-              </div>
-              <div class="modal-body">
-                <p>PeerLink is a dynamic social media platform designed for connecting users through posts, likes, and follows. It offers secure login and registration, post creation with text and image sharing, and robust profile management. Users can interact via likes, follows, and profile customization. Using HTML, CSS, JavaScript, jQuery, AJAX, PHP, and MySQL, PeerLink ensures a responsive interface and seamless user experience for engaging in social interactions and content discovery.</p>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
+      <div id="projects-container" class="row mt-4">
+        <!-- Projects will be dynamically inserted here by JavaScript -->
       </div>
     </div>
   </section>
@@ -353,86 +192,17 @@
   </section>
 
   <!-- Experience Section -->
-  <section id="experience" class="py-5 text-center">
+  <section id="experience" class="py-5">
     <div class="container">
-      <h2>Experience</h2>
-      <div class="row mt-4">
-        <div class="col-md-6">
-          <img src="./assets/Digis.svg" class="img-fluid mb-3 mt-4" style="width: 80px; height: auto;">
-          <h4><strong>
-            Angular Developer Intern
-            <br>
-            (Digis Squared)
-          </strong></h4>
-          <h5 style="font-size: large;">May 2024 - September 2024</h5>
-          <p>Contributed to the front-end development of
-            "KATANA", an advanced network performance
-            management platform, using Angular for building
-            responsive and dynamic user interfaces.</p>
-          <button class="btn btn-outline-primary btn-lg mt-2 rounded-pill" data-bs-toggle="modal" data-bs-target="#pdfModal_1" class="embed-responsive">View Certificate</button>
+        <h2 class="text-center">Experience</h2>
+        <div class="row mt-4 d-flex align-items-center justify-content-center" id="experience-container">
+            <!-- Experience cards will be dynamically inserted here by JavaScript -->
         </div>
-
-        <div class="col-md-6">
-          <img src="./assets/Nafis.png" class="img-fluid mb-3 mt-5" style="width: 92px; height: auto;">
-          <h4><strong>
-            Laravel Developer Intern
-            <br>
-            (Nafis Technologies)
-          </strong></h4>
-          <h5 style="font-size: large;">July 2024 - September 2024</h5>
-          <p>Engaged in hands-on training and development of
-            projects using the Laravel backend framework,
-            gaining comprehensive experience in building robust
-            and scalable web applications.</p>
-          <button class="btn btn-outline-primary btn-lg mt-2 rounded-pill" data-bs-toggle="modal" data-bs-target="#pdfModal_2" class="embed-responsive">View Certificate</button>
-        </div>
-      </div>
     </div>
   </section>
 
-  <!-- Experience Section Modals -->
-  <!-- Modal 1 -->
-  <div class="modal fade" id="pdfModal_1" tabindex="-1" aria-labelledby="pdfModalLabel_1" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="pdfModalLabel_1">Digis Squared</h5>
-          <a href="./assets/Certificates/Internships/Digis.pdf" class="btn btn-outline-secondary ms-auto" target="_blank">
-            <i class="fas fa-external-link-alt"></i>
-          </a>
-        </div>
-        <div class="modal-body">
-          <object data="./assets/Certificates/Internships/Digis.pdf" type="application/pdf">
-            <p class="modal-link">Your browser does not support PDFs. <a href="./assets/Certificates/Internships/Digis.pdf">Download the PDF</a></p>
-          </object>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Modal 2 -->
-  <div class="modal fade" id="pdfModal_2" tabindex="-1" aria-labelledby="pdfModalLabel_2" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="pdfModalLabel_2">Nafis Technologies</h5>
-          <a href="./assets/Certificates/Internships/Nafis.pdf" class="btn btn-outline-secondary ms-auto" target="_blank">
-            <i class="fas fa-external-link-alt"></i>
-          </a>
-        </div>
-        <div class="modal-body">
-          <object data="./assets/Certificates/Internships/Nafis.pdf" type="application/pdf">
-            <p class="modal-link">Your browser does not support PDFs. <a href="./assets/Certificates/Internships/Nafis.pdf">Download the PDF</a></p>
-          </object>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
+  <div id="experience-modals">
+    <!-- Modals for experience will be dynamically inserted here by JavaScript -->
   </div>
 
   <!-- Contact Section -->
@@ -455,69 +225,6 @@
   </section>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    // Function to highlight the navbar item based on scroll position
-    window.addEventListener('scroll', function() {
-        const sections = document.querySelectorAll('section');
-        const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
-        const lastLink = navLinks[navLinks.length - 2]; //Gets the second last section (Contact)
-        const firstLink = sections[0];
-
-        let scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
-        const offset = 75; // Change this value to adjust when the section highlights
-        const windowHeight = window.innerHeight;
-        const documentHeight = document.documentElement.scrollHeight;
-
-        let atBottom = Math.ceil(scrollPosition + windowHeight) >= documentHeight;
-
-        if (atBottom) {
-            navLinks.forEach(link => link.classList.remove('active'));
-            lastLink.classList.add('active');
-        } else {
-            if (scrollPosition < firstLink.offsetTop) {
-                navLinks.forEach(link => link.classList.remove('active'));
-            }
-
-            sections.forEach((section, index) => {
-                if (section.offsetTop - offset <= scrollPosition && (section.offsetTop + section.offsetHeight) > scrollPosition) {
-                    navLinks.forEach(link => link.classList.remove('active'));
-                    navLinks[index].classList.add('active');
-                }
-            });
-        }
-    });
-
-    //Night Mode
-    var mode = document.getElementById("mode");
-    var isNightMode = localStorage.getItem("isNightMode") === "true";
-
-    if (isNightMode) {
-      document.body.classList.add("night-mode");
-      mode.innerHTML = "Light Mode&nbsp;";
-      document.getElementById("theme-toggler").querySelector("i").classList.add("fa-sun");
-      document.getElementById("theme-toggler").querySelector("i").classList.remove("fa-moon");
-    } else {
-      mode.innerHTML = "Dark Mode&nbsp;";
-      document.getElementById("theme-toggler").querySelector("i").classList.add("fa-moon");
-      document.getElementById("theme-toggler").querySelector("i").classList.remove("fa-sun");
-    }
-
-    document.getElementById("theme-toggler").addEventListener("click", function () {
-      document.body.classList.toggle("night-mode");
-
-      const icon = this.querySelector("i");
-      if (document.body.classList.contains("night-mode")) {
-        icon.classList.remove("fa-moon");
-        icon.classList.add("fa-sun");
-        mode.innerHTML = "Light Mode&nbsp;";
-        localStorage.setItem("isNightMode", true);
-      } else {
-        icon.classList.remove("fa-sun");
-        icon.classList.add("fa-moon");
-        mode.innerHTML = "Dark Mode&nbsp;";
-        localStorage.setItem("isNightMode", false);
-      }
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
