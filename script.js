@@ -119,14 +119,16 @@ document.addEventListener("DOMContentLoaded", () => {
     experiences.forEach(experience => {
         const experienceHTML = `
             <div class="col-md-5 d-flex align-items-stretch">
-                <div class="experience-card text-center">
+                <div class="experience-card text-center d-flex flex-column h-100">
                     <img src="${experience.logo}" class="company-logo mx-auto d-block" alt="${experience.company} Logo">
                     <h4><strong>${experience.position}</strong> <br> <span>(${experience.company})</span></h4>
                     <h5>${experience.duration}</h5>
-                    <p>${experience.description}</p>
-                    <button class="btn btn-outline-primary view-certificate" data-bs-toggle="modal" data-bs-target="#pdfModal_${experience.id}">
-                        View Certificate
-                    </button>
+                    <div class="mt-auto">
+                        <p class="mb-4">${experience.description}</p>
+                        <button class="btn btn-outline-primary view-certificate" data-bs-toggle="modal" data-bs-target="#pdfModal_${experience.id}">
+                            View Certificate
+                        </button>
+                    </div>
                 </div>
             </div>
         `;
