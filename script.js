@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
             "title": "Financial-Advisor",
             "subtitle": "AI-Powered Financial Advisor",
             "description": "Work still in progress...",
-            "technologies": ["Angular", "Bootstrap", "Laravel", "Flask", "MySQL"],
+            "technologies": ["Angular", "Bootstrap", "Flutter", "Laravel", "Flask", "AI/ML", "MySQL"],
             "github": "https://github.com/Mohamed-Samehh/Financial-Advisor",
             "icon": "fa-line-chart"
         },
