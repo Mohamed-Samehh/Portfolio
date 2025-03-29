@@ -1,257 +1,420 @@
-document.addEventListener("DOMContentLoaded", () => {
-    // Projects JSON
+document.addEventListener('DOMContentLoaded', () => {
+    // Define certificates data at the top of the file to ensure it's available globally
+    const certificates = [
+      {"title": "Bootstrap & React Bootcamp", "hours": 13, "institute": "Udemy", "date": "September 2024"},
+      {"title": "JavaScript Developer", "hours": 28, "institute": "MaharaTech"},
+      {"title": "Front-End Developer", "hours": 31, "institute": "MaharaTech"},
+      {"title": "Back-End Developer", "hours": 21, "institute": "MaharaTech"},
+      {"title": "ReactJS Developer", "hours": 35, "institute": "MaharaTech"},
+      {"title": "Mern Stack Developer", "hours": 26, "institute": "MaharaTech"},
+      {"title": "Node.js Back-end Development", "hours": 50, "institute": "AITB"},
+      {"title": "ASPNET & Angular from Scratch", "hours": 67, "institute": "Udemy"}
+    ];
+    
+    // Page loader animation (simplified)
+    const loader = document.querySelector('.loader');
+    if (loader) {
+      setTimeout(() => {
+        loader.style.opacity = 0;
+        setTimeout(() => {
+          loader.style.display = 'none';
+          // Simple fade-in for hero elements
+          const heroElements = document.querySelectorAll('.hero-title, .hero-description, .hero-cta');
+          heroElements.forEach((el, index) => {
+            setTimeout(() => {
+              el.style.opacity = 1;
+              el.style.transform = 'translateY(0)';
+            }, index * 100);
+          });
+        }, 500);
+      }, 1000);
+    }
+  
+    // Populate certificates list
+    const certificatesList = document.getElementById('certificates-list');
+    if (certificatesList) {
+      // Clear any existing certificates to prevent duplication
+      certificatesList.innerHTML = '';
+      
+      // Create a document fragment for better performance
+      const certsFragment = document.createDocumentFragment();
+      
+      certificates.forEach(cert => {
+        const certItem = document.createElement('div');
+        certItem.className = 'certificate-item';
+        
+        certItem.innerHTML = `
+          <div class="certificate-title">${cert.title}</div>
+          <div class="certificate-details">
+            <span class="certificate-institute">${cert.institute}</span>
+            <span class="certificate-hours">${cert.hours} hours</span>
+            ${cert.date ? `<span class="certificate-date">${cert.date}</span>` : ''}
+          </div>
+        `;
+        
+        certsFragment.appendChild(certItem);
+      });
+      
+      certificatesList.appendChild(certsFragment);
+    }
+  
+    // Mobile menu toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+    
+    if (menuToggle) {
+      menuToggle.addEventListener('click', () => {
+        document.body.classList.toggle('menu-open');
+      });
+    }
+    
+    mobileNavLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        document.body.classList.remove('menu-open');
+      });
+    });
+  
+    // Change header style on scroll with debounce
+    const header = document.querySelector('.site-header');
+    
+    // Debounce function to limit scroll event firing
+    function debounce(func, wait = 10, immediate = true) {
+      let timeout;
+      return function() {
+        const context = this, args = arguments;
+        const later = function() {
+          timeout = null;
+          if (!immediate) func.apply(context, args);
+        };
+        const callNow = immediate && !timeout;
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+        if (callNow) func.apply(context, args);
+      };
+    }
+    
+    if (header) {
+      const handleScroll = debounce(() => {
+        if (window.scrollY > 50) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      }, 20);
+      
+      window.addEventListener('scroll', handleScroll);
+    }
+  
+    // Projects Data
     const projects = [
-        {
-            "id": 5,
-            "title": "Financial-Advisor",
-            "subtitle": "AI-Powered Financial Advisor",
-            "description": "Work still in progress...",
-            "technologies": ["Angular", "Bootstrap", "Flutter", "Laravel", "Flask", "AI/ML", "MySQL"],
-            "github": "https://github.com/Mohamed-Samehh/Financial-Advisor",
-            "icon": "fa-line-chart"
-        },
-        {
-            "id": 4,
-            "title": "Spec Recommender",
-            "subtitle": "BUE Specialization Recommender",
-            "description": "Spec Recommender is a full-stack web application designed to help users choose their career paths with ease and confidence. Built with a React Vite frontend and an Express.js backend, the platform offers a seamless user experience with responsive and intuitive design. Users can receive personalized career recommendations based on academic performance and preferences, explore specialized career options, and access a knowledge hub with courses sourced from Coursera's API. The app integrates MongoDB Atlas for efficient data management and supports user interactions like creating reviews and updating profiles.",
-            "technologies": ["React Vite", "Node.js", "Express", "MongoDB"],
-            "github": "https://github.com/Mohamed-Samehh/BUE-Spec-Path",
-            "icon": "fa-university"
-        },
-        {
-            "id": 3,
-            "title": "Blog",
-            "subtitle": "Backend for Blog Website",
-            "description": "This is a blog application built with Laravel, featuring core functionalities like user authentication, blog post management, nested comments, and a like system. It also includes media management for image uploads using Spatie Media Library, and efficient pagination for posts and comments. This project demonstrates my ability to develop robust backend systems for modern web applications using Laravel.",
-            "technologies": ["Laravel", "MySQL"],
-            "github": "https://github.com/Mohamed-Samehh/Blog",
-            "icon": "fa-pencil-alt"
-        },
-        {
-            "id": 2,
-            "title": "Recipe Finder",
-            "subtitle": "Cooking Recipes Website",
-            "description": "Recipe Finder is an Angular-based web application that lets users explore and discover recipes from various sources. Featuring an interactive recipe search function and detailed recipe views, the application offers seamless navigation through a Bootstrap-styled responsive design. Users can suggest new recipes via a form, browse meals by categories and geographical areas, and view detailed information such as ingredients and instructions for each dish. The app dynamically fetches data from external recipe APIs, ensuring an engaging and easy-to-use experience for all users.",
-            "technologies": ["Angular", "Bootstrap"],
-            "github": "https://github.com/Mohamed-Samehh/Recipe-Finder",
-            "live_demo": "https://mohamed-samehh.github.io/Recipe-Finder/",
-            "icon": "fa-utensils"
-        },
-        {
-            "id": 1,
-            "title": "PeerLink",
-            "subtitle": "Social Media Platform",
-            "description": "PeerLink is a dynamic social media platform designed for connecting users through posts, likes, and follows. It offers secure login and registration, post creation with text and image sharing, and robust profile management. Users can interact via likes, follows, and profile customization. Using HTML, CSS, JavaScript, jQuery, AJAX, PHP, and MySQL, PeerLink ensures a responsive interface and seamless user experience for engaging in social interactions and content discovery.",
-            "technologies": ["HTML", "CSS", "JavaScript", "jQuery", "Ajax", "PHP", "MySQL"],
-            "github": "https://github.com/Mohamed-Samehh/PeerLink",
-            "icon": "fa-users"
-        }
+      {
+        id: 5,
+        title: "Financial-Advisor",
+        subtitle: "AI-Powered Financial Advisor",
+        description: "An intelligent financial advisor platform that provides personalized financial recommendations using artificial intelligence and machine learning algorithms. The application analyzes user financial data to offer insights on investments, savings, and financial planning.",
+        technologies: ["Angular", "Bootstrap", "Flutter", "Laravel", "Flask", "AI/ML", "MySQL"],
+        github: "https://github.com/Mohamed-Samehh/Financial-Advisor",
+        icon: "fa-chart-line"
+      },
+      {
+        id: 4,
+        title: "Spec Recommender",
+        subtitle: "BUE Specialization Recommender",
+        description: "Spec Recommender is a full-stack web application designed to help users choose their career paths with ease and confidence. Built with a React Vite frontend and an Express.js backend, the platform offers a seamless user experience with responsive and intuitive design. Users can receive personalized career recommendations based on academic performance and preferences, explore specialized career options, and access a knowledge hub with courses sourced from Coursera's API. The app integrates MongoDB Atlas for efficient data management and supports user interactions like creating reviews and updating profiles.",
+        technologies: ["React Vite", "Node.js", "Express", "MongoDB"],
+        github: "https://github.com/Mohamed-Samehh/BUE-Spec-Path",
+        icon: "fa-university"
+      },
+      {
+        id: 3,
+        title: "Blog",
+        subtitle: "Backend for Blog Website",
+        description: "This is a blog application built with Laravel, featuring core functionalities like user authentication, blog post management, nested comments, and a like system. It also includes media management for image uploads using Spatie Media Library, and efficient pagination for posts and comments. This project demonstrates my ability to develop robust backend systems for modern web applications using Laravel.",
+        technologies: ["Laravel", "MySQL"],
+        github: "https://github.com/Mohamed-Samehh/Blog",
+        icon: "fa-blog"
+      },
+      {
+        id: 2,
+        title: "Recipe Finder",
+        subtitle: "Cooking Recipes Website",
+        description: "Recipe Finder is an Angular-based web application that lets users explore and discover recipes from various sources. Featuring an interactive recipe search function and detailed recipe views, the application offers seamless navigation through a Bootstrap-styled responsive design. Users can suggest new recipes via a form, browse meals by categories and geographical areas, and view detailed information such as ingredients and instructions for each dish. The app dynamically fetches data from external recipe APIs, ensuring an engaging and easy-to-use experience for all users.",
+        technologies: ["Angular", "Bootstrap"],
+        github: "https://github.com/Mohamed-Samehh/Recipe-Finder",
+        live_demo: "https://mohamed-samehh.github.io/Recipe-Finder/",
+        icon: "fa-utensils"
+      },
+      {
+        id: 1,
+        title: "PeerLink",
+        subtitle: "Social Media Platform",
+        description: "PeerLink is a dynamic social media platform designed for connecting users through posts, likes, and follows. It offers secure login and registration, post creation with text and image sharing, and robust profile management. Users can interact via likes, follows, and profile customization. Using HTML, CSS, JavaScript, jQuery, AJAX, PHP, and MySQL, PeerLink ensures a responsive interface and seamless user experience for engaging in social interactions and content discovery.",
+        technologies: ["HTML", "CSS", "JavaScript", "jQuery", "Ajax", "PHP", "MySQL"],
+        github: "https://github.com/Mohamed-Samehh/PeerLink",
+        icon: "fa-users"
+      }
     ];
-
-    // Dynamically load projects
-    const projectsContainer = document.getElementById("projects-container");
-
-    projects.forEach((project) => {
-        const projectHTML = `
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card border-0 shadow-sm mb-4">
-                    <i class="fa ${project.icon} fa-5x text-primary mt-4"></i>
-                    <div class="card-body">
-                        <h5 class="card-title">${project.title}<br>(${project.subtitle})</h5>
-                        <p class="card-text">Built with ${project.technologies.join(", ")}.</p>
-                        <a href="${project.github}" target="_blank" class="btn btn-outline-primary">View Project</a>
-                        ${project.live_demo ? `<a href="${project.live_demo}" target="_blank" class="btn btn-outline-primary">Live Demo</a>` : ""}
-                        <button type="button" class="btn position-absolute top-0 end-0 p-0 m-3" style="border: none; height: 0;" data-bs-toggle="modal" data-bs-target="#projectModal${project.id}">
-                            <i class="fas fa-info-circle" style="font-size: 24px;"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Modal for Project ${project.id} -->
-            <div class="modal fade" id="projectModal${project.id}" tabindex="-1" aria-labelledby="projectModalLabel${project.id}" aria-hidden="true">
-                <div class="modal-dialog modal-lg">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="projectModalLabel${project.id}">${project.title} (${project.subtitle})</h5>
-                        </div>
-                        <div class="modal-body">
-                            <p>${project.description}</p>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        `;
-
-        projectsContainer.innerHTML += projectHTML;
-    });
-
-    // Experience JSON
+  
+    // Experience Data
     const experiences = [
-        {
-            "id": 1,
-            "position": "Angular Developer Intern",
-            "company": "Digis Squared",
-            "logo": "./assets/Digis.svg",
-            "duration": "May 2024 - September 2024",
-            "description": "Contributed to the front-end development of 'KATANA', an advanced network performance management platform, using Angular for building responsive and dynamic user interfaces.",
-            "certificate": "./assets/Certificates/Internships/Digis.pdf"
-        },
-        {
-            "id": 2,
-            "position": "Laravel Developer Intern",
-            "company": "Nafis Technologies",
-            "logo": "./assets/Nafis.png",
-            "duration": "July 2024 - September 2024",
-            "description": "Engaged in hands-on training and development of projects using the Laravel backend framework, gaining comprehensive experience in building robust and scalable web applications.",
-            "certificate": "./assets/Certificates/Internships/Nafis.pdf"
-        }
+      {
+        id: 1,
+        position: "Angular Developer Intern",
+        company: "Digis Squared",
+        logo: "./assets/Digis.svg",
+        duration: "May 2024 - September 2024",
+        description: "Contributed to the front-end development of 'KATANA', an advanced network performance management platform, using Angular for building responsive and dynamic user interfaces.",
+        certificate: "./assets/Certificates/Internships/Digis.pdf"
+      },
+      {
+        id: 2,
+        position: "Laravel Developer Intern",
+        company: "Nafis Technologies",
+        logo: "./assets/Nafis.png",
+        duration: "July 2024 - September 2024",
+        description: "Engaged in hands-on training and development of projects using the Laravel backend framework, gaining comprehensive experience in building robust and scalable web applications.",
+        certificate: "./assets/Certificates/Internships/Nafis.pdf"
+      }
     ];
-
-    // Dynamically load experience section
-    const experienceContainer = document.getElementById("experience-container");
-    const experienceModals = document.getElementById("experience-modals");
-
-    experiences.forEach(experience => {
-        const experienceHTML = `
-            <div class="col-md-5 d-flex align-items-stretch">
-                <div class="experience-card text-center d-flex flex-column h-100">
-                    <img src="${experience.logo}" class="company-logo mx-auto d-block" alt="${experience.company} Logo">
-                    <h4><strong>${experience.position}</strong> <br> <span>(${experience.company})</span></h4>
-                    <h5>${experience.duration}</h5>
-                    <div class="mt-auto">
-                        <p class="mb-4">${experience.description}</p>
-                        <button class="btn btn-outline-primary view-certificate" data-bs-toggle="modal" data-bs-target="#pdfModal_${experience.id}">
-                            View Certificate
-                        </button>
-                    </div>
-                </div>
+  
+    // Populate Projects Section - Using optimized DOM manipulation
+    const projectsContainer = document.getElementById('projects-container');
+    const projectModals = document.getElementById('project-modals');
+  
+    if (projectsContainer) {
+      // Create a document fragment to improve performance
+      const projectsFragment = document.createDocumentFragment();
+      const modalsFragment = document.createDocumentFragment();
+      
+      projects.forEach(project => {
+        const projectCard = document.createElement('div');
+        projectCard.className = 'project-card';
+        
+        projectCard.innerHTML = `
+          <div class="project-image">
+            <i class="fas ${project.icon}"></i>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">
+              ${project.title}
+              <span data-bs-toggle="modal" data-bs-target="#projectModal${project.id}" style="cursor: pointer">
+                <i class="fas fa-info-circle"></i>
+              </span>
+            </h3>
+            <p class="project-subtitle">${project.subtitle}</p>
+            <div class="project-techs">
+              ${project.technologies.slice(0, 3).map(tech => `<span class="project-tech">${tech}</span>`).join('')}
+              ${project.technologies.length > 3 ? `<span class="project-tech">+${project.technologies.length - 3}</span>` : ''}
             </div>
-        `;
-    
-        const modalHTML = `
-            <div class="modal fade" id="pdfModal_${experience.id}" tabindex="-1" aria-labelledby="pdfModalLabel_${experience.id}" aria-hidden="true">
-                <div class="modal-dialog modal-lg">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="pdfModalLabel_${experience.id}">${experience.company}</h5>
-                            <a href="${experience.certificate}" class="btn btn-outline-secondary ms-auto" target="_blank">
-                                <i class="fas fa-external-link-alt"></i>
-                            </a>
-                        </div>
-                        <div class="modal-body">
-                            <object data="${experience.certificate}" type="application/pdf">
-                                <p class="modal-link">Your browser does not support PDFs. <a href="${experience.certificate}">Download the PDF</a></p>
-                            </object>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
-                        </div>
-                    </div>
-                </div>
+            <div class="project-links">
+              <a href="${project.github}" target="_blank" class="project-link">
+                <i class="fab fa-github"></i> View Code
+              </a>
+              ${project.live_demo ? `
+                <a href="${project.live_demo}" target="_blank" class="project-link">
+                  <i class="fas fa-external-link-alt"></i> Live Demo
+                </a>
+              ` : ''}
             </div>
+          </div>
         `;
-    
-        experienceContainer.innerHTML += experienceHTML;
-        experienceModals.innerHTML += modalHTML;
-    });
-
-    // Navbar Toggler
-    const toggler = document.getElementById("navbar-toggler");
-    const sidebarNav = document.getElementById("sidebarNav");
-    const navLinks = document.querySelectorAll(".sidebar-nav .nav-link");
-
-    if (!toggler || !sidebarNav) {
-        console.error("Navbar elements not found. Check your HTML structure.");
-        return;
+        
+        projectsFragment.appendChild(projectCard);
+        
+        // Create project modal
+        const modal = document.createElement('div');
+        modal.className = 'modal fade project-modal';
+        modal.id = `projectModal${project.id}`;
+        modal.setAttribute('tabindex', '-1');
+        modal.setAttribute('aria-labelledby', `projectModalLabel${project.id}`);
+        modal.setAttribute('aria-hidden', 'true');
+        
+        modal.innerHTML = `
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <div>
+                  <h5 class="modal-title" id="projectModalLabel${project.id}">${project.title}</h5>
+                  <p class="modal-subtitle">${project.subtitle}</p>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <p class="modal-description">${project.description}</p>
+                <h6>Technologies Used:</h6>
+                <div class="modal-techs">
+                  ${project.technologies.map(tech => `<span class="modal-tech">${tech}</span>`).join('')}
+                </div>
+              </div>
+              <div class="modal-footer">
+                <a href="${project.github}" target="_blank" class="btn btn-primary">
+                  <i class="fab fa-github"></i>&nbsp;View Code
+                </a>
+                ${project.live_demo ? `
+                  <a href="${project.live_demo}" target="_blank" class="btn btn-secondary">
+                    <i class="fas fa-external-link-alt"></i>&nbsp;Live Demo
+                  </a>
+                ` : ''}
+                <button type="button" class="btn btn-outline" data-bs-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        `;
+        
+        modalsFragment.appendChild(modal);
+      });
+      
+      // Append all project cards at once
+      projectsContainer.appendChild(projectsFragment);
+      if (projectModals) {
+        projectModals.appendChild(modalsFragment);
+      }
     }
-
-    toggler.addEventListener("click", function () {
-        sidebarNav.classList.toggle("active"); // Open/Close Sidebar
-    });
-
-    // Close sidebar when clicking outside
-    document.addEventListener("click", function (event) {
-        if (!sidebarNav.contains(event.target) && !toggler.contains(event.target)) {
-            sidebarNav.classList.remove("active");
-        }
-    });
-
-    // Ensure navLinks exist before looping over them
-    if (navLinks.length > 0) {
-        navLinks.forEach(link => {
-            link.addEventListener("click", function () {
-                sidebarNav.classList.remove("active");
-            });
+  
+    // Populate Experience Section - Using optimized DOM manipulation
+    const experienceContainer = document.getElementById('experience-container');
+    const experienceModals = document.getElementById('experience-modals');
+  
+    if (experienceContainer) {
+      // Create a document fragment to improve performance
+      const experiencesFragment = document.createDocumentFragment();
+      const expModalsFragment = document.createDocumentFragment();
+      
+      experiences.forEach(experience => {
+        const experienceItem = document.createElement('div');
+        experienceItem.className = 'experience-item';
+        
+        experienceItem.innerHTML = `
+          <div class="experience-card">
+            <div class="experience-top">
+              <div class="experience-company">
+                <img src="${experience.logo}" alt="${experience.company}" class="experience-logo">
+                <div class="experience-details">
+                  <h3>${experience.position}</h3>
+                  <p class="experience-company-name">${experience.company}</p>
+                </div>
+              </div>
+              <span class="experience-duration">${experience.duration}</span>
+            </div>
+            <p class="experience-description">${experience.description}</p>
+            <button class="btn btn-outline" data-bs-toggle="modal" data-bs-target="#expModal${experience.id}">
+              <i class="fas fa-certificate"></i>&nbsp; View Certificate
+            </button>
+          </div>
+        `;
+        
+        experiencesFragment.appendChild(experienceItem);
+        
+        // Create experience certificate modal
+        const modal = document.createElement('div');
+        modal.className = 'modal fade';
+        modal.id = `expModal${experience.id}`;
+        modal.setAttribute('tabindex', '-1');
+        modal.setAttribute('aria-labelledby', `expModalLabel${experience.id}`);
+        modal.setAttribute('aria-hidden', 'true');
+        
+        modal.innerHTML = `
+          <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="expModalLabel${experience.id}">${experience.company} Certificate</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <object data="${experience.certificate}" type="application/pdf" width="100%" height="500px">
+                  <p class="text-center">Your browser does not support PDFs. <a href="${experience.certificate}" target="_blank">Download the PDF</a></p>
+                </object>
+              </div>
+              <div class="modal-footer">
+                <a href="${experience.certificate}" target="_blank" class="btn btn-primary">
+                  <i class="fas fa-download"></i> Download
+                </a>
+                <button type="button" class="btn btn-outline" data-bs-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        `;
+        
+        expModalsFragment.appendChild(modal);
+      });
+      
+      // Append all experience items at once
+      experienceContainer.appendChild(experiencesFragment);
+      if (experienceModals) {
+        experienceModals.appendChild(expModalsFragment);
+      }
+    }
+  
+    // Handle navigation active states with optimized event listener
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.menu-link');
+  
+    if (sections.length && navLinks.length) {
+      const highlightNav = debounce(() => {
+        let current = '';
+        const offset = 150;
+  
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop - offset;
+          const sectionHeight = section.offsetHeight;
+          
+          if (window.pageYOffset >= sectionTop) {
+            current = section.getAttribute('id');
+          }
         });
-    } else {
-        console.warn("No sidebar navigation links found. Check your HTML structure.");
+  
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href').substring(1) === current) {
+            link.classList.add('active');
+          }
+        });
+      }, 100);
+  
+      window.addEventListener('scroll', highlightNav);
     }
-    
-    // Function to highlight the navbar item based on scroll position
-    window.addEventListener('scroll', function() {
-        const sections = document.querySelectorAll('section');
-        const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
-        const lastLink = navLinks[navLinks.length - 2]; // Gets the second last section (Contact)
-        const firstLink = sections[0];
-
-        let scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
-        const offset = 75; // Adjust when the section highlights
-        const windowHeight = window.innerHeight;
-        const documentHeight = document.documentElement.scrollHeight;
-
-        let atBottom = Math.ceil(scrollPosition + windowHeight) >= documentHeight;
-
-        if (atBottom) {
-            navLinks.forEach(link => link.classList.remove('active'));
-            lastLink.classList.add('active');
-        } else {
-            if (scrollPosition < firstLink.offsetTop) {
-                navLinks.forEach(link => link.classList.remove('active'));
-            }
-
-            sections.forEach((section, index) => {
-                if (section.offsetTop - offset <= scrollPosition && (section.offsetTop + section.offsetHeight) > scrollPosition) {
-                    navLinks.forEach(link => link.classList.remove('active'));
-                    navLinks[index].classList.add('active');
-                }
-            });
-        }
+  
+    // Scroll to top functionality with throttling
+    const scrollToTop = document.createElement('button');
+    scrollToTop.className = 'scroll-to-top';
+    scrollToTop.innerHTML = '<i class="fas fa-arrow-up"></i>';
+    document.body.appendChild(scrollToTop);
+  
+    const toggleScrollButton = debounce(() => {
+      if (window.pageYOffset > 500) {
+        scrollToTop.classList.add('show');
+      } else {
+        scrollToTop.classList.remove('show');
+      }
+    }, 100);
+  
+    window.addEventListener('scroll', toggleScrollButton);
+  
+    scrollToTop.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
     });
-
-    // Night Mode
-    var mode = document.getElementById("mode");
-    var isNightMode = localStorage.getItem("isNightMode") === "true";
-
-    if (isNightMode) {
-        document.body.classList.add("night-mode");
-        mode.innerHTML = "Light Mode&nbsp;";
-        document.getElementById("theme-toggler").querySelector("i").classList.add("fa-sun");
-        document.getElementById("theme-toggler").querySelector("i").classList.remove("fa-moon");
-    } else {
-        mode.innerHTML = "Dark Mode&nbsp;";
-        document.getElementById("theme-toggler").querySelector("i").classList.add("fa-moon");
-        document.getElementById("theme-toggler").querySelector("i").classList.remove("fa-sun");
-    }
-
-    document.getElementById("theme-toggler").addEventListener("click", function () {
-        document.body.classList.toggle("night-mode");
-
-        const icon = this.querySelector("i");
-        if (document.body.classList.contains("night-mode")) {
-            icon.classList.remove("fa-moon");
-            icon.classList.add("fa-sun");
-            mode.innerHTML = "Light Mode&nbsp;";
-            localStorage.setItem("isNightMode", true);
-        } else {
-            icon.classList.remove("fa-sun");
-            icon.classList.add("fa-moon");
-            mode.innerHTML = "Dark Mode&nbsp;";
-            localStorage.setItem("isNightMode", false);
+  
+    // Add smooth scrolling to all internal links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement) {
+          // Use native smooth scrolling
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth'
+          });
+          
+          // Update URL without page reload
+          history.pushState(null, null, targetId);
         }
+      });
     });
-});
+  });
