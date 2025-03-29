@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
             "id": 10,
             "title": "Flutter Essential Training",
             "hours": 8,
-            "institute": "Linkedin",
+            "institute": "LinkedIn",
             "date": "March 2025",
             "image": "./assets/Certificates/Linkedin/Flutter Essential Training.JPG",
             "pdf": "./assets/Certificates/Linkedin/Flutter Essential Training.pdf",
