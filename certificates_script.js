@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
             "hours": 120,
             "institute": "ITI",
             "date": "September 2024",
-            "image": "./assets/Certificates/ITI/React JS.jpg",
+            "image": "./assets/Certificates/ITI/React JS.JPG",
             "pdf": "./assets/Certificates/ITI/React JS.pdf",
             "verification": null
           },
