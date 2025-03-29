@@ -5,10 +5,10 @@ document.addEventListener("DOMContentLoaded", () => {
             "id": 10,
             "title": "Flutter Essential Training",
             "hours": 8,
-            "institute": "LinkedIn",
+            "institute": "Linkedin",
             "date": "March 2025",
-            "image": "./assets/Certificates/LinkedIn/Flutter Essential Training.JPG",
-            "pdf": "./assets/Certificates/LinkedIn/Flutter Essential Training.pdf",
+            "image": "./assets/Certificates/Linkedin/Flutter Essential Training.JPG",
+            "pdf": "./assets/Certificates/Linkedin/Flutter Essential Training.pdf",
             "verification": "https://www.linkedin.com/learning/certificates/66bc09271dac391da101552f40cc495012fd903cbc86bf9defe985546fd4e354?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3B2%2FcYT4GCR1GJooGZoRf24w%3D%3D"
         },
         {
