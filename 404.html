@@ -3,228 +3,353 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portfolio of Mohamed Sameh Elkholy">
-  <title>Portfolio - Mohamed Sameh Elkholy</title>
+  <meta name="description" content="Mohamed Sameh Elkholy - Software Engineer specializing in full-stack development">
+  <title>Mohamed Elkholy | Software Engineer</title>
   
-  <!-- Icon -->
+  <!-- Favicon -->
   <link rel="icon" href="./assets/icon.png" type="image/x-icon">
   
+  <!-- Fonts - Only keep the main font import -->
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Core CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  
 </head>
 <body>
-  <!-- Navbar -->
-  <nav class="navbar navbar-dark bg-dark shadow-sm fixed-top">
-    <div class="container d-flex justify-content-between align-items-center">
-        <a class="navbar-brand" href="index.html">Mohamed Sameh Elkholy</a>
-        <button class="navbar-toggler" type="button" id="navbar-toggler">
-          <i class="fa fa-bars" style="font-size: 28px;"></i>
-        </button>
+  <!-- Loader -->
+  <div class="loader">
+    <div class="loader-content">
+      <div class="loader-title">Mohamed Elkholy</div>
+      <div class="loader-subtitle">Software Engineer</div>
+      <div class="loader-progress"></div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="site-header">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-auto">
+          <a href="#hero" class="logo">MS</a>
+        </div>
+        <div class="col text-end d-none d-lg-block">
+          <ul class="main-menu">
+            <li><a href="#about" class="menu-link" data-text="About">About</a></li>
+            <li><a href="#skills" class="menu-link" data-text="Skills">Skills</a></li>
+            <li><a href="#projects" class="menu-link" data-text="Projects">Projects</a></li>
+            <li><a href="#experience" class="menu-link" data-text="Experience">Experience</a></li>
+            <li><a href="#contact" class="menu-link" data-text="Contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-auto d-lg-none">
+          <button class="menu-toggle">
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
     </div>
   </nav>
 
-  <!-- Sidebar Navigation -->
-  <div class="sidebar-nav" id="sidebarNav">
-    <ul class="navbar-nav">
-        <li class="nav-item"><a class="nav-link" href="#about"><i class="fa fa-user-circle"></i>&nbsp; About</a></li>
-        <li class="nav-item"><a class="nav-link" href="#resume"><i class="fa fa-file-alt"></i>&nbsp; Resume</a></li>
-        <li class="nav-item"><a class="nav-link" href="#skills"><i class="fa fa-cogs"></i>&nbsp; Skills</a></li>
-        <li class="nav-item"><a class="nav-link" href="#projects"><i class="fa fa-project-diagram"></i>&nbsp; Projects</a></li>
-        <li class="nav-item"><a class="nav-link" href="#education"><i class="fa fa-graduation-cap"></i>&nbsp; Education</a></li>
-        <li class="nav-item"><a class="nav-link" href="#experience"><i class="fa fa-briefcase"></i>&nbsp; Experience</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contact"><i class="fa fa-envelope"></i>&nbsp; Contact</a></li>
-        <li class="nav-item">
-            <div id="theme-toggler" class="nav-link d-inline-flex align-items-center">
-                <a href="javascript:void(0);">
-                    <strong class="dark-mode-toggle"><i class="fas fa-moon"></i>&nbsp;&nbsp;<span id="mode">Dark Mode</span></strong>
-                </a>
-            </div>
-        </li>
-    </ul>
-  </div>
-
-  <!-- Home Section -->
-  <header id="home" class="home-section text-center d-flex justify-content-center align-items-center border-bottom border-light custom-shadow">
-    <div class="container">
-      <h1 class="text-light animate-fadeIn">Mohamed Sameh Elkholy</h1>
-      <p class="lead text-light">Software Engineer | Full Stack Developer Specialized in Web Technologies</p>
-      <a href="#contact" class="btn btn-outline-light btn-lg mt-3 rounded-pill">Contact</a>
-    </div>
-  </header>
-
-  <!-- About Section -->
-  <section id="about" class="py-5 text-center">
-    <div class="container">
-      <h2>About</h2>
-      <p class="lead">
-        As a software engineer in the tech industry, I have established knowledge and capabilities in software development as a full-stack developer. Additionally, I have further developed my technical competence through academic education and hands-on projects in various environments. I consider myself flexible and client-oriented, with an analytical and creative approach to problem-solving. I am ready to add value to both independent endeavors and teams within dynamic company environments.
-      </p>
-    </div>
-  </section>
-
-  <!-- Resume Section -->
-  <section id="resume" class="py-5 text-center">
-    <div class="container">
-        <h2>Resume</h2>
-    <i class="fa-solid fa-file-pdf fa-3x text-primary mb-2"></i>
-        <p class="lead mt-1">View my resume to learn more about my professional journey and skills.</p>
-        <a href="" class="btn btn-outline-primary btn-lg mt-2 rounded-pill" data-bs-toggle="modal" data-bs-target="#resumeModal">View Resume</a>
-    </div>
-  </section>
-
-  <!-- Resume Modal -->
-  <div class="modal fade" id="resumeModal" tabindex="-1" aria-labelledby="resumeModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="resumeModalLabel">My Resume</h5>
-          <a href="./assets/Mohamed-Sameh-CV.pdf" class="btn btn-outline-secondary ms-auto" target="_blank">
-            <i class="fas fa-external-link-alt"></i>
-          </a>
-        </div>
-        <div class="modal-body">
-          <object data="./assets/Mohamed-Sameh-CV.pdf" type="application/pdf">
-            <p class="modal-link">Your browser does not support PDFs. <a href="./assets/Mohamed-Sameh-CV.pdf">Download the PDF</a></p>
-          </object>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+  <!-- Mobile Menu -->
+  <div class="mobile-menu">
+    <div class="mobile-menu-container">
+      <ul class="mobile-nav">
+        <li><a href="#about" class="mobile-nav-link">About</a></li>
+        <li><a href="#skills" class="mobile-nav-link">Skills</a></li>
+        <li><a href="#projects" class="mobile-nav-link">Projects</a></li>
+        <li><a href="#experience" class="mobile-nav-link">Experience</a></li>
+        <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+      </ul>
+      <div class="mobile-footer">
+        <div class="social-links">
+          <a href="https://linkedin.com/in/mohamed-sameh2011" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com/Mohamed-Samehh" target="_blank"><i class="fab fa-github"></i></a>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Skills Section -->
-  <section id="skills" class="bg py-5 text-center">
+  <!-- Hero Section -->
+  <section id="hero" class="hero-section">
     <div class="container">
-      <h2 class="mb-5">Skills</h2>
-      <div class="row mt-4 justify-content-center">
+      <div class="row min-vh-100 align-items-center">
+        <div class="col-lg-8">
+          <span class="subtitle">Software Engineer</span>
+          <h1 class="hero-title">
+            <span class="d-block">Mohamed</span>
+            <span class="highlight d-block">Sameh Elkholy</span>
+          </h1>
+          <div class="hero-description">
+            <p>Full Stack Developer specializing in creating elegant, high-performance web applications with modern technologies.</p>
+          </div>
+          <div class="hero-cta">
+            <a href="#contact" class="btn btn-primary">Get in touch</a>
+            <a href="#projects" class="btn btn-outline">View my work</a>
+          </div>
+        </div>
+        <div class="col-lg-4 d-none d-lg-block">
+          <div class="hero-image">
+            <div class="image-container">
+              <div class="shape-1"></div>
+              <div class="shape-2"></div>
+              <div class="shape-3"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <div class="mouse">
+        <div class="wheel"></div>
+      </div>
+      <div class="arrows">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <span class="section-tag">About me</span>
+          <h2 class="section-title">Who I am</h2>
+          <p class="section-description">
+            As a software engineer in the tech industry, I have established knowledge and capabilities in software development as a full-stack developer. I have further developed my technical competence through academic education and hands-on projects in various environments.
+          </p>
+          <p class="section-description">
+            I consider myself flexible and client-oriented, with an analytical and creative approach to problem-solving. I am ready to add value to both independent endeavors and teams within dynamic company environments.
+          </p>
+          <div class="about-stats row g-4 mt-4">
+            <div class="col-6 col-md-3">
+              <div class="stat-item">
+                <h3 class="stat-number">3+</h3>
+                <p class="stat-label">Years Experience</p>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="stat-item">
+                <h3 class="stat-number">10+</h3>
+                <p class="stat-label">Projects</p>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="stat-item">
+                <h3 class="stat-number">5+</h3>
+                <p class="stat-label">Tech Stacks</p>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="stat-item">
+                <h3 class="stat-number">2+</h3>
+                <p class="stat-label">Internships</p>
+              </div>
+            </div>
+          </div>
+          <div class="about-cta mt-5">
+            <a href="./assets/Mohamed-Sameh-CV.pdf" class="btn btn-outline" target="_blank">
+              <i class="fas fa-download me-2"></i>Download CV
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="education-container">
+            <div class="education-item">
+              <div class="education-year">2021 - 2025</div>
+              <div class="education-details">
+                <h4>Bachelor's in Software Engineering</h4>
+                <div class="education-school">
+                  <img src="./assets/BUE.png" alt="BUE" class="education-logo">
+                  <span>The British University in Egypt</span>
+                </div>
+                <div class="education-school mt-2">
+                  <img src="./assets/LSBU.png" alt="LSBU" class="education-logo">
+                  <span>London South Bank University</span>
+                </div>
+                <div class="education-grade">Grade: B+ | GPA: 3.5</div>
+              </div>
+            </div>
+            
+            <div class="certificates-container">
+              <h4 class="certificates-title">Professional Certifications</h4>
+              <div class="certificates-list" id="certificates-list">
+                <!-- Will be populated by JavaScript -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="section-padding">
+    <div class="container">
+      <div class="text-center mb-5">
+        <span class="section-tag">My expertise</span>
+        <h2 class="section-title">Technical Skills</h2>
+      </div>
+      
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="skill-card">
+            <div class="skill-icon">
+              <i class="fas fa-code"></i>
+            </div>
+            <h3 class="skill-title">Frontend Development</h3>
+            <div class="skill-items">
+              <span class="skill-badge">HTML</span>
+              <span class="skill-badge">CSS</span>
+              <span class="skill-badge">JavaScript</span>
+              <span class="skill-badge">TypeScript</span>
+              <span class="skill-badge">Angular</span>
+              <span class="skill-badge">React</span>
+              <span class="skill-badge">Bootstrap</span>
+              <span class="skill-badge">jQuery</span>
+              <span class="skill-badge">AJAX</span>
+            </div>
+          </div>
+        </div>
         
-        <div class="col-md-4 mb-4">
-          <i class="fas fa-laptop-code fa-3x text-primary mb-3"></i>
-          <h4>Front-End</h4>
-          <p>HTML | CSS | JavaScript | TypeScript | Angular | React | Bootstrap | jQuery | AJAX</p>
-        </div>
-
-        <div class="col-md-4 mb-4">
-          <i class="fas fa-server fa-3x text-primary mb-3"></i>
-          <h4>Back-End</h4>
-          <p>PHP | Laravel | Node.js | Express.js | Flask</p>
-        </div>
-
-        <div class="col-md-4 mb-4">
-          <i class="fas fa-database fa-3x text-primary mb-3"></i>
-          <h4>Databases</h4>
-          <p>SQL | MySQL | MongoDB</p>
-        </div>
-
-        <div class="col-md-4 mb-4">
-          <i class="fas fa-code fa-3x text-primary mb-3"></i>
-          <h4>Programming</h4>
-          <p>Java | Python | C++ | C# | C</p>
-        </div>
-
-        <div class="col-md-4 mb-4">
-          <i class="fas fa-code-branch fa-3x text-primary mb-3"></i>
-          <h4>Version Control</h4>
-          <p>Git | GitHub</p>
+        <div class="col-md-4">
+          <div class="skill-card">
+            <div class="skill-icon">
+              <i class="fas fa-server"></i>
+            </div>
+            <h3 class="skill-title">Backend Development & Database</h3>
+            <div class="skill-items">
+              <span class="skill-badge">PHP</span>
+              <span class="skill-badge">Laravel</span>
+              <span class="skill-badge">Node.js</span>
+              <span class="skill-badge">Express.js</span>
+              <span class="skill-badge">Flask</span>
+              <span class="skill-badge">SQL</span>
+              <span class="skill-badge">MySQL</span>
+              <span class="skill-badge">MongoDB</span>
+            </div>
+          </div>
         </div>
         
+        <div class="col-md-4">
+          <div class="skill-card">
+            <div class="skill-icon">
+              <i class="fas fa-database"></i>
+            </div>
+            <h3 class="skill-title">Other</h3>
+            <div class="skill-items">
+              <span class="skill-badge">Java</span>
+              <span class="skill-badge">Python</span>
+              <span class="skill-badge">C++</span>
+              <span class="skill-badge">C#</span>
+              <span class="skill-badge">Git</span>
+              <span class="skill-badge">GitHub</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Projects Section -->
-  <section id="projects" class="py-5 text-center">
+  <section id="projects" class="section-padding">
     <div class="container">
-      <h2>Projects</h2>
-      <div id="projects-container" class="row mt-4">
+      <div class="text-center mb-5">
+        <span class="section-tag">My work</span>
+        <h2 class="section-title">Featured Projects</h2>
+      </div>
+      
+      <div class="projects-container" id="projects-container">
         <!-- Projects will be dynamically inserted here by JavaScript -->
       </div>
     </div>
   </section>
 
-  <!-- Education Section -->
-  <section id="education" class="bg py-5 text-center">
-    <div class="container">
-        <h2>Education</h2>
-        
-        <!-- University Section -->
-        <div class="mt-5">
-          <h3 class="mb-3">University</h3>
-          <div class="d-flex justify-content-center align-items-center mb-3">
-            <!-- BUE Card -->
-            <a href="https://www.bue.edu.eg/" target="_blank" class="card-link">
-              <div class="card border-0 shadow-sm d-flex justify-content-center align-items-center" style="width: 150px; height: 150px;">
-                <img src="./assets/BUE.png" class="card-img img-fluid" style="width: 80px; height: 90px;" alt="BUE">
-              </div>            
-            </a>
-            <!-- LSBU Card -->
-            <a href="https://www.lsbu.ac.uk/" target="_blank" class="card-link">
-              <div class="card border-0 shadow-sm d-flex justify-content-center align-items-center" style="width: 150px; height: 150px;">
-                <img src="./assets/LSBU.png" class="card-img img-fluid" style="width: 90px; height: 100px;" alt="LSBU">
-              </div>
-            </a>
-          </div>
-          <div class="mt-3">
-            <p><strong>The British University in Egypt</strong>, in partnership with <strong>London South Bank University</strong></p>
-            <p><strong>Faculty of Informatics and Computer Science</strong>, Software Engineering Major</p>
-            <p>Start Date: September 2021 | Graduation Date: June 2025</p>
-            <p>Grade: B+ | GPA: 3.5</p>
-          </div>
-        </div>
-        
-        <!-- Certifications Section -->
-        <div class="mt-5">
-            <h3>Certifications and Courses</h3>
-            <i class="fa-solid fa-award fa-3x text-primary mt-2"></i>
-            
-            <p class="lead mt-1">View my certifications to learn more about the courses and skills I have acquired throughout my professional journey.</p>
-          
-            <div class="mt-2">
-              <a href="certificates.html" class="btn btn-outline-primary btn-lg mt-2 rounded-pill">View Certifications</a>
-            </div>
-        </div>
-
-    </div>
-  </section>
-
   <!-- Experience Section -->
-  <section id="experience" class="py-5">
+  <section id="experience" class="section-padding">
     <div class="container">
-        <h2 class="text-center">Experience</h2>
-        <div class="row mt-4 d-flex align-items-center justify-content-center" id="experience-container">
-            <!-- Experience cards will be dynamically inserted here by JavaScript -->
-        </div>
+      <div class="text-center mb-5">
+        <span class="section-tag">Work history</span>
+        <h2 class="section-title">Professional Experience</h2>
+      </div>
+      
+      <div class="experience-timeline" id="experience-container">
+        <!-- Experience will be dynamically inserted here by JavaScript -->
+      </div>
     </div>
   </section>
-
-  <div id="experience-modals">
-    <!-- Modals for experience will be dynamically inserted here by JavaScript -->
-  </div>
 
   <!-- Contact Section -->
-  <section id="contact" class="bg-dark text-light py-5 text-center border-top border-light custom-shadow">
+  <section id="contact" class="section-padding">
     <div class="container">
-      <h2>Contact</h2>
-
-      <div class="fa-user-wrapper mt-4">
-        <i class="fa fa-user p-3"></i>
-      </div>
-
-      <p class="mt-3">Feel free to reach out to me via email or phone.</p>
-      <p>Email: <a href="mailto:mohamed.kholy2011@gmail.com" class="text-light">mohamed.kholy2011@gmail.com</a></p>
-      <p>Phone: <a href="tel:+201123870300" class="text-light">+20 1123870300</a></p>
-      <div class="mt-3">
-        <a href="https://linkedin.com/in/mohamed-sameh2011" target="_blank" class="btn btn-outline-light me-2"><i class="fab fa-linkedin"></i> LinkedIn</a>
-        <a href="https://github.com/Mohamed-Samehh" target="_blank" class="btn btn-outline-light"><i class="fab fa-github"></i> GitHub</a>
+      <div class="row align-items-center">
+        <div class="col-lg-12 text-center">
+          <span class="section-tag">Get in touch</span>
+          <h2 class="section-title">Let's work together</h2>
+          <p class="section-description mx-auto" style="max-width: 600px;">
+            I'm interested in freelance opportunities and open to full-time positions. If you have a project that needs coding or a team that needs a developer, feel free to contact me.
+          </p>
+        </div>
+        
+        <div class="col-lg-10 mx-auto mt-5">
+          <div class="contact-info-container">
+            <div class="row justify-content-center g-4">
+              <div class="col-md-4">
+                <div class="contact-card">
+                  <div class="contact-icon">
+                    <i class="fas fa-envelope"></i>
+                  </div>
+                  <h4>Email</h4>
+                  <a href="mailto:mohamed.kholy2011@gmail.com">mohamed.kholy2011@gmail.com</a>
+                </div>
+              </div>
+              
+              <div class="col-md-4">
+                <div class="contact-card">
+                  <div class="contact-icon">
+                    <i class="fas fa-phone-alt"></i>
+                  </div>
+                  <h4>Phone</h4>
+                  <a href="tel:+201123870300">+20 1123870300</a>
+                </div>
+              </div>
+              
+              <div class="col-md-4">
+                <div class="contact-card">
+                  <div class="contact-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                  </div>
+                  <h4>Location</h4>
+                  <p>Cairo, Egypt</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="social-links-container text-center mt-5">
+              <h4 class="mb-4">Connect with me</h4>
+              <div class="social-links">
+                <a href="https://linkedin.com/in/mohamed-sameh2011" target="_blank" class="social-link"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/Mohamed-Samehh" target="_blank" class="social-link"><i class="fab fa-github"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
+  <!-- Modals for projects and experiences -->
+  <div id="project-modals"></div>
+  <div id="experience-modals"></div>
+
+  <!-- Core Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
