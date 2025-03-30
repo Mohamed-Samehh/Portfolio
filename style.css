@@ -676,6 +676,12 @@ button {
   letter-spacing: 1px;
 }
 
+.about-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
 .education-container {
   background-color: var(--color-bg);
   border-radius: var(--radius-lg);
@@ -684,31 +690,51 @@ button {
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
 }
 
 .education-item {
   display: flex;
   gap: var(--space-6);
   margin-bottom: var(--space-10);
+  position: relative;
 }
 
 .education-year {
   font-size: var(--font-size-sm);
   font-weight: 600;
   color: var(--color-primary);
-  padding-top: var(--space-2);
+  padding: var(--space-2) var(--space-4);
   white-space: nowrap;
+  background-color: rgba(108, 99, 255, 0.08);
+  border-radius: var(--radius-md);
+  display: inline-block;
 }
 
 .education-details {
   flex: 1;
+  background-color: rgba(108, 99, 255, 0.03);
+  padding: var(--space-5);
+  border-radius: var(--radius-md);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
 }
 
 .education-details h4 {
   font-size: var(--font-size-lg);
   font-weight: 700;
   margin-bottom: var(--space-4);
+  color: var(--color-text);
+  position: relative;
+  padding-bottom: var(--space-3);
+}
+
+.education-details h4::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background-color: var(--color-primary);
 }
 
 .education-school {
@@ -1225,6 +1251,10 @@ button {
   .projects-container {
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   }
+  
+  .education-container {
+    margin-top: var(--space-12);
+  }
 }
 
 @media (max-width: 767.98px) {
@@ -1273,24 +1303,37 @@ button {
   
   .education-item {
     flex-direction: column;
-    gap: var(--space-2);
+    gap: var(--space-4);
+    margin-bottom: var(--space-10);
   }
   
   .education-year {
-    padding-top: 0;
+    display: inline-block;
     margin-bottom: var(--space-2);
+    font-size: var(--font-size-base);
+    align-self: flex-start;
   }
   
   .education-container {
-    padding: var(--space-5);
+    padding: var(--space-6);
   }
   
   .about-stats {
-    margin-top: var(--space-5);
+    margin-top: var(--space-6);
   }
   
   .stat-item {
     margin-bottom: var(--space-4);
+  }
+  
+  .certificates-container {
+    margin-top: var(--space-10);
+    padding-top: var(--space-8);
+    border-top: 1px solid rgba(108, 99, 255, 0.1);
+  }
+  
+  .section-title {
+    font-size: var(--font-size-3xl);
   }
 }
 
