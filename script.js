@@ -354,30 +354,6 @@
       window.addEventListener('scroll', highlightNav);
     }
 
-    const scrollToTop = document.createElement('button');
-    scrollToTop.className = 'scroll-to-top';
-    scrollToTop.innerHTML = '<i class="fas fa-arrow-up"></i>';
-    document.body.appendChild(scrollToTop);
-
-    const toggleScrollButton = debounce(() => {
-      if (window.pageYOffset > 500) {
-        scrollToTop.classList.add('show');
-      } else {
-        scrollToTop.classList.remove('show');
-      }
-    }, 100);
-
-    window.addEventListener('scroll', toggleScrollButton);
-
-    scrollToTop.addEventListener('click', () => {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-      
-      scrollToTop.classList.remove('show');
-    });
-
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
         e.preventDefault();
