@@ -1,13 +1,14 @@
   document.addEventListener('DOMContentLoaded', () => {
     const certificates = [
-      {"title": "Bootstrap & React Bootcamp", "hours": 13, "institute": "Udemy", "date": "September 2024"},
-      {"title": "JavaScript Developer", "hours": 28, "institute": "MaharaTech"},
-      {"title": "Front-End Developer", "hours": 31, "institute": "MaharaTech"},
-      {"title": "Back-End Developer", "hours": 21, "institute": "MaharaTech"},
-      {"title": "ReactJS Developer", "hours": 35, "institute": "MaharaTech"},
-      {"title": "Mern Stack Developer", "hours": 26, "institute": "MaharaTech"},
-      {"title": "Node.js Back-end Development", "hours": 50, "institute": "AITB"},
-      {"title": "ASPNET & Angular from Scratch", "hours": 67, "institute": "Udemy"}
+      {"title": "Front-End Development using React JS", "hours": 120, "institute": "ITI", "date": "Sept 2024"},
+      {"title": "ASPNET & Angular from Scratch", "hours": 67, "institute": "Udemy", "date": "Jul 2024"},
+      {"title": "Node.js Back-end Development", "hours": 50, "institute": "AITB", "date": "Sept 2023"},
+      {"title": "Mern Stack Developer", "hours": 26, "institute": "MaharaTech", "date": "Oct 2024"},
+      {"title": "ReactJS Developer", "hours": 35, "institute": "MaharaTech", "date": "Oct 2024"},
+      {"title": "Back-End Developer", "hours": 21, "institute": "MaharaTech", "date": "Oct 2024"},
+      {"title": "Front-End Developer", "hours": 31, "institute": "MaharaTech", "date": "Oct 2024"},
+      {"title": "JavaScript Developer", "hours": 28, "institute": "MaharaTech", "date": "Oct 2024"},
+      {"title": "Bootstrap & React Bootcamp", "hours": 13, "institute": "Udemy", "date": "Sept 2024"}
     ];
     
     const loader = document.querySelector('.loader');

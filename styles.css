@@ -913,12 +913,15 @@ button {
 }
 
 .projects-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: var(--space-6);
+  justify-content: center;
 }
 
 .project-card {
+  flex: 0 0 calc(33.333% - var(--space-6));
+  max-width: 350px;
   background-color: var(--color-bg);
   border-radius: var(--radius-lg);
   overflow: hidden;
@@ -1332,6 +1335,19 @@ button {
     margin-top: var(--space-6);
     display: flex;
     justify-content: center;
+  }
+}
+
+@media (max-width: 1199.98px) {
+  .project-card {
+    flex: 0 0 calc(50% - var(--space-6));
+  }
+}
+
+@media (max-width: 767.98px) {
+  .project-card {
+    flex: 0 0 100%;
+    max-width: 450px;
   }
 }
 
