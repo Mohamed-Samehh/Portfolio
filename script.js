@@ -1,5 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // Define certificates data at the top of the file to ensure it's available globally
+  document.addEventListener('DOMContentLoaded', () => {
     const certificates = [
       {"title": "Bootstrap & React Bootcamp", "hours": 13, "institute": "Udemy", "date": "September 2024"},
       {"title": "JavaScript Developer", "hours": 28, "institute": "MaharaTech"},
@@ -11,14 +10,12 @@ document.addEventListener('DOMContentLoaded', () => {
       {"title": "ASPNET & Angular from Scratch", "hours": 67, "institute": "Udemy"}
     ];
     
-    // Page loader animation (simplified)
     const loader = document.querySelector('.loader');
     if (loader) {
       setTimeout(() => {
         loader.style.opacity = 0;
         setTimeout(() => {
           loader.style.display = 'none';
-          // Simple fade-in for hero elements
           const heroElements = document.querySelectorAll('.hero-title, .hero-description, .hero-cta');
           heroElements.forEach((el, index) => {
             setTimeout(() => {
@@ -29,14 +26,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 500);
       }, 1000);
     }
-  
-    // Populate certificates list
+
     const certificatesList = document.getElementById('certificates-list');
     if (certificatesList) {
-      // Clear any existing certificates to prevent duplication
       certificatesList.innerHTML = '';
       
-      // Create a document fragment for better performance
       const certsFragment = document.createDocumentFragment();
       
       certificates.forEach(cert => {
@@ -57,8 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
       
       certificatesList.appendChild(certsFragment);
     }
-  
-    // Mobile menu toggle
+
     const menuToggle = document.querySelector('.menu-toggle');
     const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
     
@@ -73,11 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.classList.remove('menu-open');
       });
     });
-  
-    // Change header style on scroll with debounce
-    const header = document.querySelector('.site-header');
-    
-    // Debounce function to limit scroll event firing
+
     function debounce(func, wait = 10, immediate = true) {
       let timeout;
       return function() {
@@ -93,6 +82,8 @@ document.addEventListener('DOMContentLoaded', () => {
       };
     }
     
+    const header = document.querySelector('.site-header');
+    
     if (header) {
       const handleScroll = debounce(() => {
         if (window.scrollY > 50) {
@@ -104,8 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
       
       window.addEventListener('scroll', handleScroll);
     }
-  
-    // Projects Data
+
     const projects = [
       {
         id: 5,
@@ -154,8 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
         icon: "fa-users"
       }
     ];
-  
-    // Experience Data
+
     const experiences = [
       {
         id: 1,
@@ -164,7 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
         logo: "./assets/Digis.svg",
         duration: "May 2024 - September 2024",
         description: "Contributed to the front-end development of 'KATANA', an advanced network performance management platform, using Angular for building responsive and dynamic user interfaces.",
-        certificate: "./assets/Certificates/Internships/Digis.pdf"
+        certificate: "./assets/Certificates/Digis.pdf"
       },
       {
         id: 2,
@@ -173,16 +162,14 @@ document.addEventListener('DOMContentLoaded', () => {
         logo: "./assets/Nafis.png",
         duration: "July 2024 - September 2024",
         description: "Engaged in hands-on training and development of projects using the Laravel backend framework, gaining comprehensive experience in building robust and scalable web applications.",
-        certificate: "./assets/Certificates/Internships/Nafis.pdf"
+        certificate: "./assets/Certificates/Nafis.pdf"
       }
     ];
-  
-    // Populate Projects Section - Using optimized DOM manipulation
+
     const projectsContainer = document.getElementById('projects-container');
     const projectModals = document.getElementById('project-modals');
-  
+
     if (projectsContainer) {
-      // Create a document fragment to improve performance
       const projectsFragment = document.createDocumentFragment();
       const modalsFragment = document.createDocumentFragment();
       
@@ -221,7 +208,6 @@ document.addEventListener('DOMContentLoaded', () => {
         
         projectsFragment.appendChild(projectCard);
         
-        // Create project modal
         const modal = document.createElement('div');
         modal.className = 'modal fade project-modal';
         modal.id = `projectModal${project.id}`;
@@ -264,19 +250,16 @@ document.addEventListener('DOMContentLoaded', () => {
         modalsFragment.appendChild(modal);
       });
       
-      // Append all project cards at once
       projectsContainer.appendChild(projectsFragment);
       if (projectModals) {
         projectModals.appendChild(modalsFragment);
       }
     }
-  
-    // Populate Experience Section - Using optimized DOM manipulation
+
     const experienceContainer = document.getElementById('experience-container');
     const experienceModals = document.getElementById('experience-modals');
-  
+
     if (experienceContainer) {
-      // Create a document fragment to improve performance
       const experiencesFragment = document.createDocumentFragment();
       const expModalsFragment = document.createDocumentFragment();
       
@@ -305,7 +288,6 @@ document.addEventListener('DOMContentLoaded', () => {
         
         experiencesFragment.appendChild(experienceItem);
         
-        // Create experience certificate modal
         const modal = document.createElement('div');
         modal.className = 'modal fade';
         modal.id = `expModal${experience.id}`;
@@ -327,7 +309,7 @@ document.addEventListener('DOMContentLoaded', () => {
               </div>
               <div class="modal-footer">
                 <a href="${experience.certificate}" target="_blank" class="btn btn-primary">
-                  <i class="fas fa-download"></i> Download
+                  <i class="fas fa-download"></i>&nbsp;Download
                 </a>
                 <button type="button" class="btn btn-outline" data-bs-dismiss="modal">Close</button>
               </div>
@@ -338,22 +320,20 @@ document.addEventListener('DOMContentLoaded', () => {
         expModalsFragment.appendChild(modal);
       });
       
-      // Append all experience items at once
       experienceContainer.appendChild(experiencesFragment);
       if (experienceModals) {
         experienceModals.appendChild(expModalsFragment);
       }
     }
-  
-    // Handle navigation active states with optimized event listener
+
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('.menu-link');
-  
+
     if (sections.length && navLinks.length) {
       const highlightNav = debounce(() => {
         let current = '';
         const offset = 150;
-  
+
         sections.forEach(section => {
           const sectionTop = section.offsetTop - offset;
           const sectionHeight = section.offsetHeight;
@@ -362,7 +342,7 @@ document.addEventListener('DOMContentLoaded', () => {
             current = section.getAttribute('id');
           }
         });
-  
+
         navLinks.forEach(link => {
           link.classList.remove('active');
           if (link.getAttribute('href').substring(1) === current) {
@@ -370,16 +350,15 @@ document.addEventListener('DOMContentLoaded', () => {
           }
         });
       }, 100);
-  
+
       window.addEventListener('scroll', highlightNav);
     }
-  
-    // Scroll to top functionality with throttling
+
     const scrollToTop = document.createElement('button');
     scrollToTop.className = 'scroll-to-top';
     scrollToTop.innerHTML = '<i class="fas fa-arrow-up"></i>';
     document.body.appendChild(scrollToTop);
-  
+
     const toggleScrollButton = debounce(() => {
       if (window.pageYOffset > 500) {
         scrollToTop.classList.add('show');
@@ -387,17 +366,18 @@ document.addEventListener('DOMContentLoaded', () => {
         scrollToTop.classList.remove('show');
       }
     }, 100);
-  
+
     window.addEventListener('scroll', toggleScrollButton);
-  
+
     scrollToTop.addEventListener('click', () => {
       window.scrollTo({
         top: 0,
         behavior: 'smooth'
       });
+      
+      scrollToTop.classList.remove('show');
     });
-  
-    // Add smooth scrolling to all internal links
+
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
         e.preventDefault();
@@ -406,13 +386,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const targetElement = document.querySelector(targetId);
         
         if (targetElement) {
-          // Use native smooth scrolling
           window.scrollTo({
             top: targetElement.offsetTop - 80,
             behavior: 'smooth'
           });
           
-          // Update URL without page reload
           history.pushState(null, null, targetId);
         }
       });
