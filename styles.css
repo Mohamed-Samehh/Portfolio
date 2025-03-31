@@ -261,7 +261,6 @@ button {
   transition: background-color 0.3s ease, padding 0.3s ease, box-shadow 0.3s ease;
   will-change: transform;
   transform: translateZ(0);
-  background-color: var(--color-bg);
 }
 
 .site-header.scrolled {

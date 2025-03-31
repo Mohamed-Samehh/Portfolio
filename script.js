@@ -87,14 +87,17 @@
     
     if (header) {
       const handleScroll = debounce(() => {
-        if (window.scrollY > 50) {
+        const scrollThreshold = 20;
+        
+        if (window.scrollY > scrollThreshold) {
           header.classList.add('scrolled');
         } else {
           header.classList.remove('scrolled');
         }
-      }, 20);
+      }, 10);
       
       window.addEventListener('scroll', handleScroll);
+      handleScroll();
     }
 
     const projects = [
