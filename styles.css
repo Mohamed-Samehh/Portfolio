@@ -1519,11 +1519,6 @@ html.light-mode .btn-close {
   filter: none;
 }
 
-html.light-mode .education-logo,
-html.light-mode .experience-logo {
-  filter: brightness(0.8);
-}
-
 .theme-toggle-animation {
   animation: spin 0.5s ease;
 }
