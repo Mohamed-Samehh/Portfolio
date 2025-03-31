@@ -333,6 +333,28 @@
 
     let isClickScrolling = false;
 
+    function updateNavigation(targetId) {
+      if (targetId === '#hero') {
+        navLinks.forEach(link => link.classList.remove('active'));
+        mobileNavLinks.forEach(link => link.classList.remove('active'));
+        return;
+      }
+      
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === targetId) {
+          link.classList.add('active');
+        }
+      });
+      
+      mobileNavLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === targetId) {
+          link.classList.add('active');
+        }
+      });
+    }
+
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
         e.preventDefault();
@@ -342,24 +364,15 @@
         
         if (targetElement) {
           isClickScrolling = true;
-
+          
+          if (document.body.classList.contains('menu-open')) {
+            document.body.classList.remove('menu-open');
+          }
+          
           if (this.classList.contains('logo') || targetId === '#hero') {
-            navLinks.forEach(link => {
-              link.classList.remove('active');
-            });
-          } else if (this.classList.contains('menu-link')) {
-            navLinks.forEach(link => {
-              link.classList.remove('active');
-            });
-            this.classList.add('active');
+            updateNavigation('#hero');
           } else {
-            const menuLink = document.querySelector(`.menu-link[href="${targetId}"]`);
-            if (menuLink) {
-              navLinks.forEach(link => {
-                link.classList.remove('active');
-              });
-              menuLink.classList.add('active');
-            }
+            updateNavigation(targetId);
           }
           
           targetElement.scrollIntoView({ 
@@ -375,50 +388,41 @@
       });
     });
     
-    if (sections.length && navLinks.length) {
-      const highlightNav = debounce(() => {
+    if (sections.length) {
+      function checkSectionInView() {
         if (isClickScrolling) return;
         
-        let current = '';
-        const offset = 150;
-
+        const scrollPosition = window.scrollY + window.innerHeight / 3;
+        
+        let currentSectionId = 'hero';
+        
         sections.forEach(section => {
-          const sectionTop = section.offsetTop - offset;
+          const sectionTop = section.offsetTop;
           const sectionHeight = section.offsetHeight;
           
-          if (window.pageYOffset >= sectionTop) {
-            current = section.getAttribute('id');
+          if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+            currentSectionId = section.getAttribute('id');
           }
         });
-
-        if (current === 'hero') {
-          navLinks.forEach(link => {
-            link.classList.remove('active');
-          });
-          return;
+        
+        if (currentSectionId === 'hero') {
+          updateNavigation('#hero');
+        } else {
+          updateNavigation('#' + currentSectionId);
         }
-
-        navLinks.forEach(link => {
-          link.classList.remove('active');
-          if (link.getAttribute('href').substring(1) === current) {
-            link.classList.add('active');
-          }
-        });
-      }, 100);
-
-      window.addEventListener('scroll', highlightNav);
+      }
+      
+      window.addEventListener('scroll', checkSectionInView);
+      window.addEventListener('resize', checkSectionInView);
+      
+      checkSectionInView();
     }
     
     if (window.location.hash) {
       const targetId = window.location.hash;
+      
       if (targetId !== '#hero') {
-        const targetLink = document.querySelector(`.menu-link[href="${targetId}"]`);
-        if (targetLink) {
-          navLinks.forEach(link => {
-            link.classList.remove('active');
-          });
-          targetLink.classList.add('active');
-        }
+        updateNavigation(targetId);
       }
       
       setTimeout(() => {
@@ -429,9 +433,15 @@
       }, 500);
     } else {
       if (window.pageYOffset <= 50) {
-        navLinks.forEach(link => {
-          link.classList.remove('active');
-        });
+        updateNavigation('#hero');
       }
     }
+
+    const styleElement = document.createElement('style');
+    styleElement.textContent = `
+      .mobile-nav-link.active {
+        color: var(--color-primary) !important;
+      }
+    `;
+    document.head.appendChild(styleElement);
   });
