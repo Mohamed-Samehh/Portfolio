@@ -1453,6 +1453,28 @@ object[data$=".pdf"] {
   border-radius: var(--radius-md);
 }
 
+@media (max-width: 767.98px) {
+  .modal-footer {
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+  
+  .modal-footer .btn {
+    width: 100%;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  
+  .project-modal .modal-dialog {
+    margin: 0.5rem;
+  }
+  
+  .project-modal .modal-content {
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+}
+
 body:not(.menu-open) {
   pointer-events: auto;
 }
