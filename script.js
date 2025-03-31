@@ -478,6 +478,23 @@
       updateThemeIcons();
     }
 
+    const scrollIndicator = document.querySelector('.scroll-indicator');
+    if (scrollIndicator) {
+      scrollIndicator.classList.add('pulse-animation');
+      
+      scrollIndicator.addEventListener('click', () => {
+        const aboutSection = document.getElementById('about');
+        if (aboutSection) {
+          isClickScrolling = true;
+          aboutSection.scrollIntoView({ behavior: 'smooth' });
+
+          setTimeout(() => {
+            isClickScrolling = false;
+          }, 1000);
+        }
+      });
+    }
+
     function updateThemeIcons() {
       const isDarkMode = html.classList.contains('dark-mode');
       const allThemeToggles = [themeToggle, mobileThemeToggle];

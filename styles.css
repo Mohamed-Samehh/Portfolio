@@ -1505,6 +1505,30 @@ html.light-mode .experience-logo {
   animation: spin 0.5s ease;
 }
 
+.scroll-indicator {
+  cursor: pointer;
+}
+
+.pulse-animation {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(5px) scale(1.05);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+.scroll-indicator:active {
+  transform: translateY(8px);
+}
+
 @keyframes spin {
   0% {
     transform: rotate(0deg) scale(1);
