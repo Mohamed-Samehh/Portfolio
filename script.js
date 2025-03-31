@@ -100,7 +100,7 @@
     const projects = [
       {
         id: 5,
-        title: "Financial-Advisor",
+        title: "Financial Advisor",
         subtitle: "AI-Powered Financial Advisor",
         description: "An intelligent financial advisor platform that provides personalized financial recommendations using artificial intelligence and machine learning algorithms. The application analyzes user financial data to offer insights on investments, savings, and financial planning.",
         technologies: ["Angular", "Bootstrap", "Flutter", "Laravel", "Flask", "AI/ML", "MySQL"],
