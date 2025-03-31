@@ -66,6 +66,19 @@ html {
   scrollbar-color: var(--color-primary) var(--color-bg-light);
 }
 
+html.light-mode {
+  --color-text: #333333;
+  --color-text-light: #666666;
+  --color-bg: #FFFFFF;
+  --color-bg-light: #F5F5F7;
+  --color-border: #E1E1E6;
+  --color-muted: #9A9AA8;
+  
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.15);
+}
+
 ::-webkit-scrollbar {
   width: 6px;
 }
@@ -117,6 +130,67 @@ button {
   font-size: inherit;
   color: inherit;
   cursor: pointer;
+}
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: rgba(108, 99, 255, 0.1);
+  color: var(--color-primary);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.theme-toggle:hover {
+  background-color: rgba(108, 99, 255, 0.2);
+  transform: scale(1.1);
+}
+
+.theme-toggle i {
+  position: absolute;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.light-mode .theme-toggle .fa-moon {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.light-mode .theme-toggle .fa-sun {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.dark-mode .theme-toggle .fa-moon {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+.dark-mode .theme-toggle .fa-sun {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.mobile-theme-toggle-container {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.menu-toggle {
+  margin-left: 10px;
+}
+
+@media (max-width: 575.98px) {
+  .mobile-theme-toggle-container {
+    right: 10px;
+  }
 }
 
 .loader {
@@ -1401,4 +1475,44 @@ section {
 
 img, svg {
   content-visibility: auto;
+}
+
+html.light-mode .education-container,
+html.light-mode .skill-card,
+html.light-mode .project-card,
+html.light-mode .experience-card,
+html.light-mode .contact-card,
+html.light-mode .certificate-item,
+html.light-mode .modal-content {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+html.light-mode .loader {
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}
+
+html.light-mode .btn-close {
+  filter: none;
+}
+
+html.light-mode .education-logo,
+html.light-mode .experience-logo {
+  filter: brightness(0.8);
+}
+
+.theme-toggle-animation {
+  animation: spin 0.5s ease;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(0.8);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
 }

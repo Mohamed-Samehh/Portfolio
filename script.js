@@ -444,4 +444,65 @@
       }
     `;
     document.head.appendChild(styleElement);
+
+    const themeToggle = document.getElementById('theme-toggle');
+    const mobileThemeToggle = document.getElementById('mobile-theme-toggle');
+    const html = document.documentElement;
+
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    html.className = savedTheme + '-mode';
+
+    updateThemeIcons();
+
+    function toggleTheme() {
+      const isDarkMode = html.classList.contains('dark-mode');
+      
+      if (isDarkMode) {
+        html.classList.remove('dark-mode');
+        html.classList.add('light-mode');
+        localStorage.setItem('theme', 'light');
+      } else {
+        html.classList.remove('light-mode');
+        html.classList.add('dark-mode');
+        localStorage.setItem('theme', 'dark');
+      }
+      
+      themeToggle.classList.add('theme-toggle-animation');
+      mobileThemeToggle.classList.add('theme-toggle-animation');
+      
+      setTimeout(() => {
+        themeToggle.classList.remove('theme-toggle-animation');
+        mobileThemeToggle.classList.remove('theme-toggle-animation');
+      }, 500);
+      
+      updateThemeIcons();
+    }
+
+    function updateThemeIcons() {
+      const isDarkMode = html.classList.contains('dark-mode');
+      const allThemeToggles = [themeToggle, mobileThemeToggle];
+      
+      allThemeToggles.forEach(toggle => {
+        if (!toggle) return;
+        
+        const moonIcon = toggle.querySelector('.fa-moon');
+        const sunIcon = toggle.querySelector('.fa-sun');
+        
+        if (isDarkMode) {
+          if (moonIcon) moonIcon.style.display = 'none';
+          if (sunIcon) sunIcon.style.display = 'block';
+        } else {
+          if (moonIcon) moonIcon.style.display = 'block';
+          if (sunIcon) sunIcon.style.display = 'none';
+        }
+      });
+    }
+
+    if (themeToggle) {
+      themeToggle.addEventListener('click', toggleTheme);
+    }
+
+    if (mobileThemeToggle) {
+      mobileThemeToggle.addEventListener('click', toggleTheme);
+    }
   });

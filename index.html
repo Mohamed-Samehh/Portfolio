@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark-mode">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Mohamed Sameh Elkholy - Software Engineer specializing in full-stack development">
-  <title>Mohamed Elkholy | Software Engineer</title>
+  <title>Mohamed Sameh | Software Engineer</title>
   
   <!-- Favicon -->
   <link rel="icon" href="./assets/icon.png" type="image/x-icon">
@@ -31,8 +31,12 @@
   <nav class="site-header">
     <div class="container">
       <div class="row align-items-center">
-        <div class="col-auto">
+        <div class="col-auto d-flex align-items-center">
           <a href="#hero" class="logo">MS</a>
+          <button class="menu-toggle d-lg-none ms-3">
+            <span></span>
+            <span></span>
+          </button>
         </div>
         <div class="col text-end d-none d-lg-block">
           <ul class="main-menu">
@@ -41,12 +45,18 @@
             <li><a href="#projects" class="menu-link" data-text="Projects">Projects</a></li>
             <li><a href="#experience" class="menu-link" data-text="Experience">Experience</a></li>
             <li><a href="#contact" class="menu-link" data-text="Contact">Contact</a></li>
+            <li>
+              <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark/light mode">
+                <i class="fas fa-moon"></i>
+                <i class="fas fa-sun"></i>
+              </button>
+            </li>
           </ul>
         </div>
         <div class="col-auto d-lg-none">
-          <button class="menu-toggle">
-            <span></span>
-            <span></span>
+          <button id="mobile-theme-toggle" class="theme-toggle" aria-label="Toggle dark/light mode">
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun"></i>
           </button>
         </div>
       </div>
