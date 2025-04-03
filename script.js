@@ -151,7 +151,15 @@
 
     const experiences = [
       {
-        id: 1,
+        id: 3,
+        position: "Web Developer",
+        company: "Outlier",
+        logo: "./assets/Outlier.png",
+        duration: "February 2025 - Present",
+        description: "Evaluated and rewrote AI-generated code to create production-quality frontend web applications, while providing feedback for model enhancement.",
+      },
+      {
+        id: 2,
         position: "Angular Developer Intern",
         company: "Digis Squared",
         logo: "./assets/Digis.svg",
@@ -160,7 +168,7 @@
         certificate: "./assets/Certificates/Digis.pdf"
       },
       {
-        id: 2,
+        id: 1,
         position: "Laravel Developer Intern",
         company: "Nafis Technologies",
         logo: "./assets/Nafis.png",
@@ -284,44 +292,48 @@
               <span class="experience-duration">${experience.duration}</span>
             </div>
             <p class="experience-description">${experience.description}</p>
-            <button class="btn btn-outline" data-bs-toggle="modal" data-bs-target="#expModal${experience.id}">
-              <i class="fas fa-certificate"></i>&nbsp; View Certificate
-            </button>
+            ${experience.certificate ? `
+              <button class="btn btn-outline" data-bs-toggle="modal" data-bs-target="#expModal${experience.id}">
+                <i class="fas fa-certificate"></i>&nbsp; View Certificate
+              </button>
+            ` : ''}
           </div>
         `;
         
         experiencesFragment.appendChild(experienceItem);
         
-        const modal = document.createElement('div');
-        modal.className = 'modal fade';
-        modal.id = `expModal${experience.id}`;
-        modal.setAttribute('tabindex', '-1');
-        modal.setAttribute('aria-labelledby', `expModalLabel${experience.id}`);
-        modal.setAttribute('aria-hidden', 'true');
-        
-        modal.innerHTML = `
-          <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="expModalLabel${experience.id}">${experience.company} Certificate</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                <object data="${experience.certificate}" type="application/pdf" width="100%" height="500px">
-                  <p class="text-center">Your browser does not support PDFs. <a href="${experience.certificate}" target="_blank">Download the PDF</a></p>
-                </object>
-              </div>
-              <div class="modal-footer">
-                <a href="${experience.certificate}" target="_blank" class="btn btn-primary">
-                  <i class="fas fa-download"></i>&nbsp;Download
-                </a>
-                <button type="button" class="btn btn-outline" data-bs-dismiss="modal">Close</button>
+        if (experience.certificate) {
+          const modal = document.createElement('div');
+          modal.className = 'modal fade';
+          modal.id = `expModal${experience.id}`;
+          modal.setAttribute('tabindex', '-1');
+          modal.setAttribute('aria-labelledby', `expModalLabel${experience.id}`);
+          modal.setAttribute('aria-hidden', 'true');
+          
+          modal.innerHTML = `
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="expModalLabel${experience.id}">${experience.company} Certificate</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <object data="${experience.certificate}" type="application/pdf" width="100%" height="500px">
+                    <p class="text-center">Your browser does not support PDFs. <a href="${experience.certificate}" target="_blank">Download the PDF</a></p>
+                  </object>
+                </div>
+                <div class="modal-footer">
+                  <a href="${experience.certificate}" target="_blank" class="btn btn-primary">
+                    <i class="fas fa-download"></i>&nbsp;Download
+                  </a>
+                  <button type="button" class="btn btn-outline" data-bs-dismiss="modal">Close</button>
+                </div>
               </div>
             </div>
-          </div>
-        `;
-        
-        expModalsFragment.appendChild(modal);
+          `;
+          
+          expModalsFragment.appendChild(modal);
+        }
       });
       
       experienceContainer.appendChild(experiencesFragment);
