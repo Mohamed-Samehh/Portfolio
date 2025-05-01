@@ -121,6 +121,15 @@
       },
       {
         id: 3,
+        title: "PeerLink-Mobile",
+        subtitle: "Social Media Mobile Application",
+        description: "PeerLink is a dynamic social media platform designed for connecting users through posts, likes, and follows. It offers secure login and registration, post creation with text and image sharing, and robust profile management. Users can interact via likes, follows, and profile customization. Built using Flutter for a cross-platform mobile interface, Laravel for a robust backend, and MySQL for efficient data management, PeerLink ensures a responsive interface and seamless user experience for engaging in social interactions and content discovery.",
+        technologies: ["Flutter", "Laravel", "MySQL"],
+        github: "https://github.com/Mohamed-Samehh/PeerLink-Mobile",
+        icon: "fa-users"
+      },
+      {
+        id: 2,
         title: "Blog",
         subtitle: "Backend for Blog Website",
         description: "This is a blog application built with Laravel, featuring core functionalities like user authentication, blog post management, nested comments, and a like system. It also includes media management for image uploads using Spatie Media Library, and efficient pagination for posts and comments. This project demonstrates my ability to develop robust backend systems for modern web applications using Laravel.",
@@ -129,7 +138,7 @@
         icon: "fa-blog"
       },
       {
-        id: 2,
+        id: 1,
         title: "Recipe Finder",
         subtitle: "Cooking Recipes Website",
         description: "Recipe Finder is an Angular-based web application that lets users explore and discover recipes from various sources. Featuring an interactive recipe search function and detailed recipe views, the application offers seamless navigation through a Bootstrap-styled responsive design. Users can suggest new recipes via a form, browse meals by categories and geographical areas, and view detailed information such as ingredients and instructions for each dish. The app dynamically fetches data from external recipe APIs, ensuring an engaging and easy-to-use experience for all users.",
@@ -137,15 +146,6 @@
         github: "https://github.com/Mohamed-Samehh/Recipe-Finder",
         live_demo: "https://mohamed-samehh.github.io/Recipe-Finder/",
         icon: "fa-utensils"
-      },
-      {
-        id: 1,
-        title: "PeerLink",
-        subtitle: "Social Media Platform",
-        description: "PeerLink is a dynamic social media platform designed for connecting users through posts, likes, and follows. It offers secure login and registration, post creation with text and image sharing, and robust profile management. Users can interact via likes, follows, and profile customization. Using HTML, CSS, JavaScript, jQuery, AJAX, PHP, and MySQL, PeerLink ensures a responsive interface and seamless user experience for engaging in social interactions and content discovery.",
-        technologies: ["HTML", "CSS", "JavaScript", "jQuery", "Ajax", "PHP", "MySQL"],
-        github: "https://github.com/Mohamed-Samehh/PeerLink",
-        icon: "fa-users"
       }
     ];
 
