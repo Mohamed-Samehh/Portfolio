@@ -156,6 +156,7 @@
         company: "Mercor",
         logo: "./assets/Mercor.png",
         duration: "May 2025 - Present",
+        location: "San Francisco, USA",
         description: "Recently started a remote part-time role as a Software Engineer with Mercor, collaborating directly with the Amazon team on a pilot project.",
       },
       {
@@ -164,6 +165,7 @@
         company: "Outlier",
         logo: "./assets/Outlier.png",
         duration: "February 2025 - Present",
+        location: "Freelance",
         description: "Evaluated and rewrote AI-generated code to create production-quality frontend web applications while providing feedback for model enhancement.",
       },
       {
@@ -172,6 +174,7 @@
         company: "Digis Squared",
         logo: "./assets/Digis.svg",
         duration: "May 2024 - September 2024",
+        location: "Cairo, Egypt",
         description: "Contributed to the front-end development of 'KATANA', an advanced network performance management platform, using Angular for building responsive and dynamic user interfaces.",
         certificate: "./assets/Certificates/Digis.pdf"
       },
@@ -181,6 +184,7 @@
         company: "Nafis Technologies",
         logo: "./assets/Nafis.png",
         duration: "July 2024 - September 2024",
+        location: "Cairo, Egypt",
         description: "Engaged in hands-on training and development of projects using the Laravel backend framework, gaining comprehensive experience in building robust and scalable web applications.",
         certificate: "./assets/Certificates/Nafis.pdf"
       }
@@ -294,7 +298,10 @@
                 <img src="${experience.logo}" alt="${experience.company}" class="experience-logo">
                 <div class="experience-details">
                   <h3>${experience.position}</h3>
-                  <p class="experience-company-name">${experience.company}</p>
+                  <p class="experience-company-name">
+                    ${experience.company}
+                    ${experience.location ? ` • ${experience.location}` : ''}
+                  </p>
                 </div>
               </div>
               <span class="experience-duration">${experience.duration}</span>
