@@ -151,6 +151,14 @@
 
     const experiences = [
       {
+        id: 4,
+        position: "Software Engineer",
+        company: "Mercor",
+        logo: "./assets/Mercor.png",
+        duration: "May 2025 - Present",
+        description: "Recently started a remote part-time role as a Software Engineer with Mercor, collaborating directly with the Amazon team on a pilot project.",
+      },
+      {
         id: 3,
         position: "Web Developer",
         company: "Outlier",
