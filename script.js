@@ -156,7 +156,7 @@
         company: "Outlier",
         logo: "./assets/Outlier.png",
         duration: "February 2025 - Present",
-        description: "Evaluated and rewrote AI-generated code to create production-quality frontend web applications, while providing feedback for model enhancement.",
+        description: "Evaluated and rewrote AI-generated code to create production-quality frontend web applications while providing feedback for model enhancement.",
       },
       {
         id: 2,
