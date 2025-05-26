@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en" class="dark-mode">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mohamed Sameh Elkholy - Software Engineer specializing in full-stack development">
+  <title>Mohamed Sameh | Software Engineer</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" href="./assets/icon.png" type="image/x-icon">
+  
+  <!-- Fonts - Only keep the main font import -->
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Core CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Loader -->
+  <div class="loader">
+    <div class="loader-content">
+      <div class="loader-title">Mohamed Sameh</div>
+      <div class="loader-subtitle">Software Engineer</div>
+      <div class="loader-progress"></div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="site-header">
+    <div class="container">
+      <div class="row align-items-center justify-content-between w-100">
+        <div class="col-auto d-flex align-items-center">
+          <a href="#hero" class="logo">MS</a>
+          <button class="menu-toggle d-lg-none ms-3">
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+        <div class="col d-none d-lg-block">
+          <ul class="main-menu">
+            <li><a href="#about" class="menu-link" data-text="About">About</a></li>
+            <li><a href="#skills" class="menu-link" data-text="Skills">Skills</a></li>
+            <li><a href="#projects" class="menu-link" data-text="Projects">Projects</a></li>
+            <li><a href="#experience" class="menu-link" data-text="Experience">Experience</a></li>
+            <li><a href="#contact" class="menu-link" data-text="Contact">Contact</a></li>
+            <li>
+              <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark/light mode">
+                <i class="fas fa-moon"></i>
+                <i class="fas fa-sun"></i>
+              </button>
+            </li>
+          </ul>
+        </div>
+        <div class="col-auto d-lg-none">
+          <button id="mobile-theme-toggle" class="theme-toggle" aria-label="Toggle dark/light mode">
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu">
+    <div class="mobile-menu-container">
+      <ul class="mobile-nav">
+        <li><a href="#about" class="mobile-nav-link">About</a></li>
+        <li><a href="#skills" class="mobile-nav-link">Skills</a></li>
+        <li><a href="#projects" class="mobile-nav-link">Projects</a></li>
+        <li><a href="#experience" class="mobile-nav-link">Experience</a></li>
+        <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+      </ul>
+      <div class="mobile-footer">
+        <div class="social-links">
+          <a href="https://linkedin.com/in/mohamed-sameh2011" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com/Mohamed-Samehh" target="_blank"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero-section">
+    <div class="container">
+      <div class="row min-vh-100 align-items-center">
+        <div class="col-lg-8">
+          <span class="subtitle">Software Engineer</span>
+          <h1 class="hero-title">
+            <span class="d-block">Mohamed</span>
+            <span class="highlight d-block">Sameh Elkholy</span>
+          </h1>
+          <div class="hero-description">
+            <p>Full Stack Developer specializing in creating elegant, high-performance web applications with modern technologies.</p>
+          </div>
+          <div class="hero-cta">
+            <a href="#contact" class="btn btn-primary">Get in touch</a>
+            <a href="#projects" class="btn btn-outline">View my work</a>
+          </div>
+        </div>
+        <div class="col-lg-4 d-none d-lg-block">
+          <div class="hero-image">
+            <div class="image-container">
+              <div class="shape-1"></div>
+              <div class="shape-2"></div>
+              <div class="shape-3"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <div class="mouse">
+        <div class="wheel"></div>
+      </div>
+      <div class="arrows">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section-padding">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-6">
+          <span class="section-tag">About me</span>
+          <h2 class="section-title">Who I am</h2>
+          <p class="section-description">
+            As a software engineer in the tech industry, I have established knowledge and capabilities in software development as a full-stack developer. I have further developed my technical competence through academic education and hands-on projects in various environments.
+          </p>
+          <p class="section-description">
+            I consider myself flexible and client-oriented, with an analytical and creative approach to problem-solving. I am ready to add value to both independent endeavors and teams within dynamic company environments.
+          </p>
+          <div class="about-stats row g-4 mt-4">
+            <div class="col-6 col-md-3">
+              <div class="stat-item">
+                <h3 class="stat-number">6+</h3>
+                <p class="stat-label">Months Experience</p>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="stat-item">
+                <h3 class="stat-number">10+</h3>
+                <p class="stat-label">Projects</p>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="stat-item">
+                <h3 class="stat-number">5+</h3>
+                <p class="stat-label">Tech Stacks</p>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="stat-item">
+                <h3 class="stat-number">2+</h3>
+                <p class="stat-label">Internships</p>
+              </div>
+            </div>
+          </div>
+          <div class="about-cta mt-5">
+            <a href="./assets/Mohamed-Sameh-CV.pdf" class="btn btn-outline" target="_blank">
+              <i class="fas fa-download me-2"></i>Download CV
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="education-container">
+            <h4 class="certificates-title">Education</h4>
+            <div class="education-item">
+              <div class="education-year">2021 - 2025</div>
+              <div class="education-details">
+                <h4>Bachelor's in Informatics and Computer Science</h4>
+                <div class="education-school">
+                  <img src="./assets/BUE.png" alt="BUE" class="education-logo">
+                  <span>The British University in Egypt</span>
+                </div>
+                <div class="education-school mt-2">
+                  <img src="./assets/LSBU.png" alt="LSBU" class="education-logo">
+                  <span>London South Bank University</span>
+                </div>
+                <div class="education-grade">Grade: B+ | GPA: 3.5</div>
+              </div>
+            </div>
+            
+            <div class="certificates-container">
+              <h4 class="certificates-title">Certifications & Courses</h4>
+              <div class="certificates-list" id="certificates-list">
+                <!-- Will be populated by JavaScript -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="section-padding">
+    <div class="container">
+      <div class="text-center mb-5">
+        <span class="section-tag">My expertise</span>
+        <h2 class="section-title">Skills</h2>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="skill-card">
+            <div class="skill-icon">
+              <i class="fas fa-code"></i>
+            </div>
+            <h3 class="skill-title">Frontend Development</h3>
+            <div class="skill-items">
+              <span class="skill-badge">HTML</span>
+              <span class="skill-badge">CSS</span>
+              <span class="skill-badge">Bootstrap</span>
+              <span class="skill-badge">JavaScript</span>
+              <span class="skill-badge">TypeScript</span>
+              <span class="skill-badge">Angular</span>
+              <span class="skill-badge">React</span>
+              <span class="skill-badge">jQuery</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="skill-card">
+            <div class="skill-icon">
+              <i class="fas fa-server"></i>
+            </div>
+            <h3 class="skill-title">Backend Development</h3>
+            <div class="skill-items">
+              <span class="skill-badge">PHP</span>
+              <span class="skill-badge">Laravel</span>
+              <span class="skill-badge">Node.js</span>
+              <span class="skill-badge">Express.js</span>
+              <span class="skill-badge">Flask</span>
+              <span class="skill-badge">Django</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="skill-card">
+            <div class="skill-icon">
+              <i class="fas fa-database"></i>
+            </div>
+            <h3 class="skill-title">Database & DevOps</h3>
+            <div class="skill-items">
+              <span class="skill-badge">SQL</span>
+              <span class="skill-badge">MySQL</span>
+              <span class="skill-badge">MongoDB</span>
+              <span class="skill-badge">Git</span>
+              <span class="skill-badge">GitHub</span>
+              <span class="skill-badge">Docker</span>
+              <span class="skill-badge">AWS</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row g-4 mt-3">
+        <div class="col-md-4">
+          <div class="skill-card">
+            <div class="skill-icon">
+              <i class="fas fa-laptop-code"></i>
+            </div>
+            <h3 class="skill-title">Programming Languages</h3>
+            <div class="skill-items">
+              <span class="skill-badge">Python</span>
+              <span class="skill-badge">Java</span>
+              <span class="skill-badge">C++</span>
+              <span class="skill-badge">C#</span>
+              <span class="skill-badge">C</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="skill-card">
+            <div class="skill-icon">
+              <i class="fas fa-brain"></i>
+            </div>
+            <h3 class="skill-title">AI/ML</h3>
+            <div class="skill-items">
+              <span class="skill-badge">AI Integration</span>
+              <span class="skill-badge">ML Frameworks</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="skill-card">
+            <div class="skill-icon">
+              <i class="fas fa-globe"></i>
+            </div>
+            <h3 class="skill-title">Languages</h3>
+            <div class="skill-items">
+              <span class="skill-badge">English (B2)</span>
+              <span class="skill-badge">Arabic (Native)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="section-padding">
+    <div class="container">
+      <div class="text-center mb-5">
+        <span class="section-tag">My work</span>
+        <h2 class="section-title">Featured Projects</h2>
+      </div>
+      
+      <div class="projects-container" id="projects-container">
+        <!-- Projects will be dynamically inserted here by JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience" class="section-padding">
+    <div class="container">
+      <div class="text-center mb-5">
+        <span class="section-tag">Work history</span>
+        <h2 class="section-title">Professional Experience</h2>
+      </div>
+      
+      <div class="experience-timeline" id="experience-container">
+        <!-- Experience will be dynamically inserted here by JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section-padding">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-12 text-center">
+          <span class="section-tag">Get in touch</span>
+          <h2 class="section-title">Let's work together</h2>
+          <p class="section-description mx-auto" style="max-width: 600px;">
+            I'm interested in freelance opportunities and open to full-time positions. If you have a project that needs coding or a team that needs a developer, feel free to contact me.
+          </p>
+        </div>
+        
+        <div class="col-lg-10 mx-auto mt-5">
+          <div class="contact-info-container">
+            <div class="row justify-content-center g-4">
+              <div class="col-md-4">
+                <div class="contact-card">
+                  <div class="contact-icon">
+                    <i class="fas fa-envelope"></i>
+                  </div>
+                  <h4>Email</h4>
+                  <a href="mailto:mohamed.kholy2011@gmail.com">mohamed.kholy2011@gmail.com</a>
+                </div>
+              </div>
+              
+              <div class="col-md-4">
+                <div class="contact-card">
+                  <div class="contact-icon">
+                    <i class="fas fa-phone-alt"></i>
+                  </div>
+                  <h4>Phone</h4>
+                  <a href="tel:+201123870300">+20 1123870300</a>
+                </div>
+              </div>
+              
+              <div class="col-md-4">
+                <div class="contact-card">
+                  <div class="contact-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                  </div>
+                  <h4>Location</h4>
+                  <p>Cairo, Egypt</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="social-links-container text-center mt-5">
+              <h4 class="mb-4">Connect with me</h4>
+              <div class="social-links">
+                <a href="https://linkedin.com/in/mohamed-sameh2011" target="_blank" class="social-link"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/Mohamed-Samehh" target="_blank" class="social-link"><i class="fab fa-github"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modals for projects and experiences -->
+  <div id="project-modals"></div>
+  <div id="experience-modals"></div>
+
+  <!-- Core Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
