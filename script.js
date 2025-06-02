@@ -105,7 +105,7 @@
         id: 5,
         title: "Financial Advisor",
         subtitle: "AI-Powered Financial Advisor",
-        description: "This is an intelligent financial advisor platform that provides personalized financial recommendations using artificial intelligence and machine learning algorithms. The system analyzes user financial data to offer insights on investments, savings, and financial planning.",
+        description: "Financial Advisor is an intelligent personal finance platform that helps users manage their money through AI-powered expense analysis and Egyptian market investment tools. The platform automatically categorizes expenses, predicts future spending with high accuracy, and provides personalized budget recommendations and goal tracking. Users can explore investment opportunities in Egyptian bank certificates and EGX stocks, compare returns across multiple options, and receive tailored financial advice through an AI chatbot that understands local market conditions. Available as both web and mobile applications, the platform serves as a comprehensive financial management solution specifically designed for the Egyptian market.",
         technologies: ["Angular", "Bootstrap", "Flutter", "Laravel", "Flask", "AI/ML", "MySQL"],
         github: "https://github.com/Mohamed-Samehh/Financial-Advisor",
         icon: "fa-chart-line"
